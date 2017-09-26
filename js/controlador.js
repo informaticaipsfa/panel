@@ -67,6 +67,7 @@ class Estado{
 }
 
 function IniciarSesion(){
+  console.log(sessionStorage.getItem('ipsfaToken') );
   if (sessionStorage.getItem('ipsfaToken') != undefined ){
 
     var e = sessionStorage.getItem("ipsfaToken");
@@ -77,6 +78,7 @@ function IniciarSesion(){
 
     $("#_PerfilUsuario").html(Usuario.Perfil.descripcion);
     $("#_NombreUsuario").html(Usuario.nombre);
+    console.log(Usuario);
 
   }
 }
@@ -113,7 +115,8 @@ function SeleccionarParroquia(valor){
 }
 
 
-function Principal(){
+function Pagina(pag){
+  CargarUrl("_cuerpo","inc/" + pag);
 
 }
 

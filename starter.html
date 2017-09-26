@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="../dist/css/checkbox.css">
-    <link rel="stylesheet" href="../dist/css/_all-skins_1.css">
+    <link rel="stylesheet" href="../css/checkbox.css">
+    <link rel="stylesheet" href="css/_all-skins_1.css">
     <link rel="stylesheet" href="../plugins/iCheck/flat/blue.css">
     <link rel="stylesheet" href="../dist/css/fonts.googleapis.css">
     <link rel="stylesheet" href="../bower_components/select2/dist/css/select2.min.css">
@@ -34,6 +34,7 @@
     <script src="../dist/js/adminlte.min.js"></script>
     <script src="js/utilidad.js"></script>
     <script src="js/config.js"></script>
+    <script src="js/controlador.js"></script>
     <script src="js/usuario.js"></script>
 </head>
 
@@ -118,12 +119,12 @@
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu" data-widget="tree" id='_menu'>
                 <li class='header'>MENU</li>
-                <li><a href="gestionusuarios.html"><i class="fa fa-television"></i> <span>Inicio</span></a></li>
-                <li><a href="gestionusuarios.html"><i class="fa fa-user"></i> <span>Crear Usuarios</span></a></li>
-                <li><a href="listadousuario.html"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
-                <li><a href="configuracionusuario.html"><i class="fa fa-television"></i> <span>Configuracion</span></a>
+                <li><a href="starter.html"><i class="fa fa-television"></i> <span>Inicio</span></a></li>
+                <li><a href="#" onclick="Pagina('crearusuario')"><i class="fa fa-user"></i> <span>Crear Usuarios</span></a></li>
+                <li><a href="#" onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
+                <li><a href="#" onclick="Pagina('configurar')"><i class="fa fa-television"></i> <span>Configuracion</span></a>
                 </li>
-                <li><a href=""><i class="fa fa-television"></i> <span>Auditoria</span></a></li>
+                <li><a href="#"><i class="fa fa-television"></i> <span>Auditoria</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -137,7 +138,7 @@
 
 
             <!-- Main content -->
-            <section class="content">
+            <section class="content" id="_cuerpo">
                         <div class="nav-tabs-custom">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab_1" data-toggle="tab">Configuracion De Usuario</a></li>
