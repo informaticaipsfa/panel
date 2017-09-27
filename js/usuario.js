@@ -45,6 +45,7 @@ class Usuario{
         this.login = "";
         this.correo = "";
         this.clave = "";
+        this.rclave = "";
         this.sucursal = "";
         this.direccion = "";
         this.cargo = "";
@@ -70,6 +71,8 @@ class Usuario{
        this.FirmaDigital.direccionip = $("#direccionIp").val();
        this.FirmaDigital.direccionmac = $("#direccionMac").val();
        this.direccion = $("#direccionDomicilio").val();
+       this.clave = $("#clave").val();
+       this.rclave = $("#rclave").val();
 
        return this;
     }
@@ -175,6 +178,8 @@ function llenarUsuario(datos){
     $("#telefono").val(datos.telefono);
     $("#correo").val(datos.correo);
     $("#estatus").val(datos.estatus);
+    $("#Clave").val(datos.Clave);
+    $("#rclave").val(datos.rclave);
 
 }
 function cargarMenu(){
