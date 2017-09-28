@@ -8,7 +8,6 @@ class Utilidad {
         var tecla = String.fromCharCode(key).toLowerCase();
         var letras = " áéíóúabcdefghijklmnñopqrstuvwxyz0123456789*";
         var especiales = [8, 37, 39, 46, 9, 17];
-
         var tecla_especial = false
         for (var i in especiales) {
             if (key == especiales[i]) {

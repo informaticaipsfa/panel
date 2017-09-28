@@ -101,7 +101,7 @@ $(function () {
 
 function CiudadMunicipio(valor){
     if (valor == undefined){
-        Estados.ObtenerCiudadMunicipio($("#cmbmestado option:selected").val());
+        Estados.ObtenerCiudadMunicipio($("#Salvarcmbmestado option:selected").val());
     }else{
         Estados.ObtenerCiudadMunicipio($("#cmbestadof option:selected").val(), true);
     }

@@ -1,3 +1,21 @@
+let listaUsuario = null;
+//let Conn = new Conexion();
+let util = new Utilidad();
+$(function () {
+
+    var promesa = CargarAPI({
+        sURL: Conn.URL + "wusuario/listar",
+        metodo: 'GET',
+        valores: '',
+    });
+    promesa.then(function(xhRequest) {
+        listaUsuario = JSON.parse(xhRequest.responseText);
+        llenarLista();
+        llenarUsuarios();
+    });
+     $("#cmbUsuario").select2();
+});
+
 class Roles{
     constructor(){
         this.descripcion = "";
@@ -38,8 +56,12 @@ class FirmaDigital{
     }
 }
 
-class Usuario{
+class Usuariosss{
     constructor(){
+        this.fechaCreacion = "";
+        this.sistema = "";
+        this.gerencia = "";
+
         this.cedula = "";
         this.nombre = "";
         this.login = "";
@@ -49,16 +71,19 @@ class Usuario{
         this.direccion = "";
         this.cargo = "";
         this.telefono = "";
-        this.sistema = "";
+
         this.FirmaDigital = new FirmaDigital ();
         this.token = "";
         this.Roles = new Roles();
         this.Perfil = new Perfil();
+      }
 
-
-    }
 
     Obtener(){
+       this.fechacreacion =  $("#fechaCreacion").val();
+       this.sistema =  $("#sistema").val();
+       this.sistema =$("#cmbGerencia").val();
+
        this.cedula = $("#cedula").val();
        this.nombre = $("#nombre").val();
        this.login = $("#usuario").val();
@@ -70,7 +95,6 @@ class Usuario{
        this.FirmaDigital.direccionip = $("#direccionIp").val();
        this.FirmaDigital.direccionmac = $("#direccionMac").val();
        this.direccion = $("#direccionDomicilio").val();
-
        return this;
     }
     Salvar(){
@@ -81,34 +105,14 @@ class Usuario{
           valores: this.Obtener(),
       });
       requestE.then(function(xhRequest) {
-
         console.log("Obteniendo Datos...");
         console.log(xhRequest);
       });
     }
 }
 
-let listaUsuario = null;
-let Conn = new Conexion();
-let util = new Utilidad();
-$(function () {
-
-    var promesa = CargarAPI({
-        sURL: Conn.URL + "wusuario/listar",
-        metodo: 'GET',
-        valores: '',
-    });
-    promesa.then(function(xhRequest) {
-        listaUsuario = JSON.parse(xhRequest.responseText);
-        llenarLista();
-        llenarUsuarios();
-    });
-     $("#cmbUsuario").select2();
-});
-
-
 function Salvar(){
-  var usuario = new Usuario();
+  var usuario = new Usuariosss();
   console.log("Enviando datos para salvar usuario");
   usuario.Salvar();
   console.log("Usuario Salvado!!!");
@@ -175,7 +179,6 @@ function llenarUsuario(datos){
     $("#telefono").val(datos.telefono);
     $("#correo").val(datos.correo);
     $("#estatus").val(datos.estatus);
-
 }
 function cargarMenu(){
     var usuario = $("#cmbUsuario option:selected").val();
