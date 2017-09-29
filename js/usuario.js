@@ -1,6 +1,5 @@
 let listaUsuario = null;
-//let Conn = new Conexion();
-let util = new Utilidad();
+
 $(function () {
 
     var promesa = CargarAPI({
@@ -96,12 +95,8 @@ class Usuariosss{
        this.FirmaDigital.direccionip = $("#direccionIp").val();
        this.FirmaDigital.direccionmac = $("#direccionMac").val();
        this.direccion = $("#direccionDomicilio").val();
-<<<<<<< HEAD
-=======
        this.clave = $("#clave").val();
        this.rclave = $("#rclave").val();
-
->>>>>>> 0af09481a447198e90711d7615fc99fdb8270dc6
        return this;
     }
     Salvar(){
@@ -186,12 +181,8 @@ function llenarUsuario(datos){
     $("#telefono").val(datos.telefono);
     $("#correo").val(datos.correo);
     $("#estatus").val(datos.estatus);
-<<<<<<< HEAD
-=======
     $("#Clave").val(datos.Clave);
     $("#rclave").val(datos.rclave);
-
->>>>>>> 0af09481a447198e90711d7615fc99fdb8270dc6
 }
 function cargarMenu(){
     var usuario = $("#cmbUsuario option:selected").val();
