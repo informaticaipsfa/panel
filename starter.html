@@ -40,18 +40,18 @@
 </head>
 
 <body class="hold-transition skin-yellow">
-<header class="header" style="background-color:#3c8dbc">
-    <div class="row">
-        <div class="col-md-3 hidden-xs"><img src='images/ng.png' class="img-responsive" alt="Responsive image"
-                                             style='float: left;'></div>
-        <div class="col-md-6 hidden-xs">
-            <center><img src='images/rv.png' class="img-responsive" alt="Responsive image" style="margin-top:6px">
-            </center>
+    <header class="header" style="background-color:#3c8dbc">
+        <div class="row">
+            <div class="col-md-3 hidden-xs"><img src='images/ng.png' class="img-responsive" alt="Responsive image"
+                                                 style='float: left;'></div>
+            <div class="col-md-6 hidden-xs">
+                <center><img src='images/rv.png' class="img-responsive" alt="Responsive image" style="margin-top:6px">
+                </center>
+            </div>
+            <div class="col-md-3 hidden-xs"><img src='images/lg.png' class="img-responsive" alt="Responsive image"
+                                                 style="float:right;"></div>
         </div>
-        <div class="col-md-3 hidden-xs"><img src='images/lg.png' class="img-responsive" alt="Responsive image"
-                                             style="float:right;"></div>
-    </div>
-</header>
+    </header>
 
 <div class="wrapper">
 
@@ -134,13 +134,67 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content" id="panelderecho">
-            <!-- Aqui empiezo -->
+            <section class="content" id="_cuerpo">    
+                <div class="row">
+                    <div class="nav-tabs-custom box box-primary"></div> <br>
+                    <div class="col-lg-3 col-xs-6">
+                      <!-- small box -->
+                      <div class="small-box bg-aqua">
+                        <div class="inner">
+                          <h3>Creacion<br> De Usuario</h3> 
+                          <p></p>
+                        </div>
+                        <div class="icon">
+                          <i class="fa fa-shopping-cart"></i>
+                        </div>
+                    <a href="#" class="small-box-footer"> <i onclick="Pagina('crearusuario')"><i class="fa fa-user"></i> <span>Crear Usuarios</span></i></a>
+                      </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                      <!-- small box -->
+                      <div class="small-box bg-green">
+                        <div class="inner">
+                          <h3>Listado <br> De Usuarios </h3>
 
-
-            <!-- Main content -->
-            <section class="content" id="_cuerpo">
-                        
-            </section>
+                          <p></p>
+                        </div>
+                        <div class="icon">
+                          <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> <i onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></i></a>
+                      </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                      <!-- small box -->
+                      <div class="small-box bg-yellow">
+                        <div class="inner">
+                          <h3>Configuracion <br> De Usuarios </h3>
+                          <p></p>
+                        </div>
+                        <div class="icon">
+                          <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> <i onclick="Pagina('configurar')"> <i class="fa fa-television"></i> <span>Configuracion</span></i></a>
+                      </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                      <!-- small box -->
+                      <div class="small-box bg-red">
+                        <div class="inner">
+                          <h3>Auditoria <br> De Usuarios</h3>
+                          <p></p>
+                        </div>
+                        <div class="icon">
+                          <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> <i onclick="Pagina('')"> <i class="fa fa-television"></i> <span>Auditoria</span></i></a>
+                      </div>
+                    </div>
+              </div>
+           </section>
         </section>
     </div>
 

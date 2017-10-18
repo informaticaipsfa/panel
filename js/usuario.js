@@ -60,7 +60,6 @@ class Usuariosss{
         this.fechaCreacion = "";
         this.sistema = "";
         this.gerencia = "";
-
         this.cedula = "";
         this.nombre = "";
         this.login = "";
@@ -71,7 +70,6 @@ class Usuariosss{
         this.direccion = "";
         this.cargo = "";
         this.telefono = "";
-
         this.FirmaDigital = new FirmaDigital ();
         this.token = "";
         this.Roles = new Roles();
@@ -83,7 +81,6 @@ class Usuariosss{
        this.fechacreacion =  $("#fechaCreacion").val();
        this.sistema =  $("#sistema").val();
        this.sistema =$("#cmbGerencia").val();
-
        this.cedula = $("#cedula").val();
        this.nombre = $("#nombre").val();
        this.login = $("#usuario").val();
