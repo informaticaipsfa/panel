@@ -69,13 +69,10 @@ class Estado{
 function IniciarSesion(){
   console.log(sessionStorage.getItem('ipsfaToken') );
   if (sessionStorage.getItem('ipsfaToken') != undefined ){
-
     var e = sessionStorage.getItem("ipsfaToken");
     var s = e.split(".");
     var json = JSON.parse(atob(s[1]));
     Usuario = json.Usuario;
-
-
     $("#_PerfilUsuario").html(Usuario.Perfil.descripcion);
     $("#_NombreUsuario").html(Usuario.nombre);
     console.log(Usuario);
