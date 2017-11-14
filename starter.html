@@ -112,6 +112,7 @@
         </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
+
     <aside class="main-sidebar">
 
         <!-- sidebar: style can be found in sidebar.less -->
@@ -136,19 +137,21 @@
             <section class="content" id="_cuerpo">    
                 <div class="row">
                     <div class="nav-tabs-custom box box-primary"></div> <br>
+                    
                     <div class="col-lg-3 col-xs-6">
                       <!-- small box -->
-                      <div class="small-box bg-aqua">
+                      <div  class="small-box bg-aqua">
                         <div class="inner">
-                          <h3>Nuevo <br> Usuario</h3> 
+                          <h3> Nuevo <br> Usuario</h3> 
                           <p></p>
                         </div>
-                        <div class="icon">
-                          <i class="ion-android-person-add"></i>
+                        <div  class="icon"> 
+                          <i style="cursor: pointer" onclick="Pagina('crearusuario')" class="ion-android-person-add"></i>
                         </div>
                     <a href="#" class="small-box-footer"> <i onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></i></a>
                       </div>
-                    </div>
+                    
+                </div>
                     <!-- ./col -->
                     <div class="col-lg-3 col-xs-6">
                       <!-- small box -->
@@ -159,7 +162,7 @@
                           <p></p>
                         </div>
                         <div class="icon">
-                          <i class="fa fa-users"></i>
+                          <i style="cursor: pointer" onclick="Pagina('listarusuario')" class="fa fa-users"></i>
                         </div>
                         <a href="#" class="small-box-footer"> <i onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></i></a>
                       </div>
@@ -173,7 +176,7 @@
                           <p></p>
                         </div>
                         <div class="icon">
-                          <i class="ion-settings"></i>
+                          <i style="cursor: pointer" onclick="Pagina('configurar')" class="ion-settings"></i>
                         </div>
                         <a href="#" class="small-box-footer"> <i onclick="Pagina('configurar')"> <i class="ion-settings"></i> <span>Configuracion</span></i></a>
                       </div>
@@ -187,7 +190,7 @@
                           <p></p>
                         </div>
                         <div class="icon">
-                          <i class="ion-ios-compose"></i>
+                          <i style="cursor: pointer" onclick="Pagina('auditoria')" class="ion-ios-compose"></i>
                         </div>
                         <a href="#" class="small-box-footer"> <i onclick="Pagina('auditoria')"> <i class="ion-ios-compose"></i> <span>Auditoria</span></i></a>
                       </div>
