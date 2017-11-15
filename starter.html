@@ -1,214 +1,197 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Panel de Control</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="../css/checkbox.css">
-    <link rel="stylesheet" href="css/_all-skins_1.css">
-    <link rel="stylesheet" href="../plugins/iCheck/flat/blue.css">
-    <link rel="stylesheet" href="../dist/css/fonts.googleapis.css">
-    <link rel="stylesheet" href="../bower_components/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="../bower_components/fancy/dist/jquery.fancybox.css">
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/notify/notify.min.js"></script>
-    <script src="../bower_components/select2/dist/js/select2.full.min.js"></script>
-    <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-    <script src="../bower_components/moment/min/moment.min.js"></script>
-    <script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js"></script>
-    <script src="../bower_components/fancy/dist/jquery.fancybox.min.js"></script>
-    <script src="../dist/js/adminlte.min.js"></script>
-    <script src="../bienestar/js/militar.js"></script>
-    <script src="js/utilidad.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/controlador.js"></script>
-    <script src="js/usuario.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Panel de Control</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="../css/checkbox.css">
+        <link rel="stylesheet" href="css/_all-skins_1.css">
+        <link rel="stylesheet" href="../plugins/iCheck/flat/blue.css">
+        <link rel="stylesheet" href="../dist/css/fonts.googleapis.css">
+        <link rel="stylesheet" href="../bower_components/select2/dist/css/select2.min.css">
+        <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="../bower_components/fancy/dist/jquery.fancybox.css">
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../bower_components/notify/notify.min.js"></script>
+        <script src="../bower_components/select2/dist/js/select2.full.min.js"></script>
+        <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../plugins/input-mask/jquery.inputmask.js"></script>
+        <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+        <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+        <script src="../bower_components/moment/min/moment.min.js"></script>
+        <script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js"></script>
+        <script src="../bower_components/fancy/dist/jquery.fancybox.min.js"></script>
+        <script src="../dist/js/adminlte.min.js"></script>
+        <script src="../bienestar/js/militar.js"></script>
+        <script src="js/utilidad.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/controlador.js"></script>
+        <script src="js/usuario.js"></script>
+    </head>
 
-<body class="hold-transition skin-yellow">
-    <header class="header" style="background-color:#3c8dbc">
-        <div class="row">
-            <div class="col-md-3 hidden-xs"><img src='images/ng.png' class="img-responsive" alt="Responsive image"
-                                                 style='float: left;'></div>
-            <div class="col-md-6 hidden-xs">
-                <center><img src='images/rv.png' class="img-responsive" alt="Responsive image" style="margin-top:6px">
-                </center>
+    <body class="hold-transition skin-yellow">
+        <header class="header" style="background-color:#3c8dbc">
+            <div class="row">
+                <div class="col-md-3 hidden-xs"><img src='images/ng.png' class="img-responsive" alt="Responsive image"
+                                                     style='float: left;'></div>
+                <div class="col-md-6 hidden-xs">
+                    <center><img src='images/rv.png' class="img-responsive" alt="Responsive image" style="margin-top:6px">
+                    </center>
+                </div>
+                <div class="col-md-3 hidden-xs"><img src='images/lg.png' class="img-responsive" alt="Responsive image"
+                                                     style="float:right;"></div>
             </div>
-            <div class="col-md-3 hidden-xs"><img src='images/lg.png' class="img-responsive" alt="Responsive image"
-                                                 style="float:right;"></div>
-        </div>
-    </header>
+        </header>
 
-<div class="wrapper">
+        <div class="wrapper">
+            <header class="main-header">
+                <a href="starter.html" class="logo">
+                    <span class="logo-mini"><b>S</b>FNB</span>
+                    <span class="logo-lg"><b>SSSI</b>FANB</span>
+                </a>
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <span class="logo1 hidden-xs">Sistema de Seguridad Social Integral de la Fuerza Armada Nacional Bolivariana</span>
+                    <div class="navbar-custom-menu">
 
-    <header class="main-header">
-        <a href="starter.html" class="logo">
-            <span class="logo-mini"><b>S</b>FNB</span>
-
-            <span class="logo-lg"><b>SSSI</b>FANB</span>
-
-        </a>
-        <nav class="navbar navbar-static-top" role="navigation">
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
-            <span class="logo1 hidden-xs">Sistema de Seguridad Social Integral de la Fuerza Armada Nacional Bolivariana</span>
-            <div class="navbar-custom-menu">
-
-                <ul class="nav navbar-nav">
-                    <li class="dropdown messages-menu" style="" id="_search" onclick="ActivarBuscar()">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </li>
-
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="images/ndisponible.jpg" onerror="this.src='images/ndisponible.jpg'"
-                                 class="user-image" alt="User Image">
-                            <span class="hidden-xs" id="_PerfilUsuario"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- The user image in the menu -->
-                            <li class="user-header">
-                                <img src="images/ndisponible.jpg" class="img-circle"
-                                     onerror="this.src='images/ndisponible.jpg'" alt="User Image">
-                                <p id="_NombreUsuario">
-
-
-                                </p>
-
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown messages-menu" style="" id="_search" onclick="ActivarBuscar()">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-search"></i>
+                                </a>
                             </li>
 
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat" onclick="VerCambiarClave()">Cambiar
-                                        clave</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat" onclick="CerrarSession()">Cerrar
-                                        Sesión</a>
-                                </div>
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="images/ndisponible.jpg" onerror="this.src='images/ndisponible.jpg'"
+                                         class="user-image" alt="User Image">
+                                    <span class="hidden-xs" id="_PerfilUsuario"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <img src="images/ndisponible.jpg" class="img-circle"
+                                             onerror="this.src='images/ndisponible.jpg'" alt="User Image">
+                                        <p id="_NombreUsuario">
+                                        </p>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="#" class="btn btn-default btn-flat" onclick="VerCambiarClave()">Cambiar
+                                                clave</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="#" class="btn btn-default btn-flat" onclick="CerrarSession()">Cerrar
+                                                Sesión</a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
-                    </li>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
 
-                </ul>
+            <aside class="main-sidebar">
+
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar Menu -->
+                    <ul class="sidebar-menu" data-widget="tree" id='_menu'>
+                        <li class='header'>MENU </li> 
+                        <li><a href="starter.html"><i class="ion-ios-home"></i> <span>Inicio</span></a></li>
+                        <li><a href="#" onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></a></li>
+                        <li><a href="#" onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
+                        <li><a href="#" onclick="Pagina('configurar')"><i class="ion-settings"></i> <span>Configuracion</span></a></li>
+                        <li><a href="#" onclick="Pagina('auditoria')"><i class="ion-ios-compose"></i> <span>Auditoria</span></a></li>
+                    </ul>
+                    <!-- /.sidebar-menu -->
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <section class="content" id="panelderecho">
+                    <section class="content" id="_cuerpo">    
+                        <div class="row">
+                            <div class="nav-tabs-custom box box-primary"></div> <br> <br>                      
+                            <div class="col-lg-3 col-xs-6">
+                              <!-- small box -->
+                                <div  class="small-box bg-aqua">
+                                    <div class="inner">
+                                        <h3> Nuevo <br> Usuario</h3> 
+                                        <p></p>
+                                    </div>
+                                    <div  class="icon"> 
+                                        <i style="cursor: pointer" onclick="Pagina('crearusuario')" class="ion-android-person-add"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer"> <i onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></i></a>
+                                </div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-lg-3 col-xs-6">
+                              <!-- small box -->
+                                <div class="small-box bg-green">
+                                    <div class="inner">
+                                        <h3><br>Listado </h3>
+                                        <p></p>
+                                    </div>
+                                    <div class="icon">
+                                       <i style="cursor: pointer" onclick="Pagina('listarusuario')" class="fa fa-users"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer"> <i onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></i></a>
+                                </div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-lg-3 col-xs-6">
+                                  <!-- small box -->
+                                <div class="small-box bg-blue">
+                                    <div class="inner">
+                                        <h3><br>Configuracion</h3>
+                                        <p></p>
+                                    </div>
+                                    <div class="icon">
+                                        <i style="cursor: pointer" onclick="Pagina('configurar')" class="ion-settings"></i>
+                                    </div>
+                                     <a href="#" class="small-box-footer"> <i onclick="Pagina('configurar')"> <i class="ion-settings"></i> <span>Configuracion</span></i></a>
+                              </div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-lg-3 col-xs-6">
+                                  <!-- small box -->
+                                <div class="small-box bg-red">
+                                    <div class="inner">
+                                        <h3><br>Auditoria</h3>
+                                        <p></p>
+                                    </div>
+                                    <div class="icon">
+                                        <i style="cursor: pointer" onclick="Pagina('auditoria')" class="ion-ios-compose"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer"> <i onclick="Pagina('auditoria')"> <i class="ion-ios-compose"></i> <span>Auditoria</span></i></a>
+                                </div>
+                            </div>
+                      </div>
+                   </section>
+                </section>
             </div>
-        </nav>
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-
-    <aside class="main-sidebar">
-
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu" data-widget="tree" id='_menu'>
-                <li class='header'>MENU </li> 
-                <li><a href="starter.html"><i class="ion-ios-home"></i> <span>Inicio</span></a></li>
-                <li><a href="#" onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></a></li>
-                <li><a href="#" onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
-                <li><a href="#" onclick="Pagina('configurar')"><i class="ion-settings"></i> <span>Configuracion</span></a></li>
-                <li><a href="#" onclick="Pagina('auditoria')"><i class="ion-ios-compose"></i> <span>Auditoria</span></a></li>
-            </ul>
-            <!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <section class="content" id="panelderecho">
-            <section class="content" id="_cuerpo">    
-                <div class="row">
-                    <div class="nav-tabs-custom box box-primary"></div> <br>
-                    
-                    <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div  class="small-box bg-aqua">
-                        <div class="inner">
-                          <h3> Nuevo <br> Usuario</h3> 
-                          <p></p>
-                        </div>
-                        <div  class="icon"> 
-                          <i style="cursor: pointer" onclick="Pagina('crearusuario')" class="ion-android-person-add"></i>
-                        </div>
-                    <a href="#" class="small-box-footer"> <i onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></i></a>
-                      </div>
-                    
-                </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div class="small-box bg-green">
-                        <div class="inner">
-                          <h3><br>Listado <br> </h3>
-
-                          <p></p>
-                        </div>
-                        <div class="icon">
-                          <i style="cursor: pointer" onclick="Pagina('listarusuario')" class="fa fa-users"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> <i onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></i></a>
-                      </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div class="small-box bg-blue">
-                        <div class="inner">
-                          <h3><br>Configuracion <br></h3>
-                          <p></p>
-                        </div>
-                        <div class="icon">
-                          <i style="cursor: pointer" onclick="Pagina('configurar')" class="ion-settings"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> <i onclick="Pagina('configurar')"> <i class="ion-settings"></i> <span>Configuracion</span></i></a>
-                      </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div class="small-box bg-red">
-                        <div class="inner">
-                          <h3><br>Auditoria <br></h3>
-                          <p></p>
-                        </div>
-                        <div class="icon">
-                          <i style="cursor: pointer" onclick="Pagina('auditoria')" class="ion-ios-compose"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> <i onclick="Pagina('auditoria')"> <i class="ion-ios-compose"></i> <span>Auditoria</span></i></a>
-                      </div>
-                    </div>
-              </div>
-           </section>
-        </section>
-    </div>
-
-    <!-- /.content-wrapper -->
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-
         </div>
-        <!-- Default to the left -->
-        <strong>Derechos Reservados &copy; 2017 <a href="#">IPSFA</a>.</strong>
-    </footer>
-</body>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs"> </div>
+            <strong>Derechos Reservados &copy; 2017 <a href="#">IPSFA</a>.</strong>
+        </footer>
+    </body>
 </html>
