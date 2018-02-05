@@ -1,3 +1,79 @@
+class Conexion{
+    constructor(){
+        this.IP = "localhost";
+        this.Puerto = ":8080";
+        this.PuertoSSL = ":2608";
+        this.API = "/ipsfa/api/";
+        this.URL = "https://" + this.IP + this.PuertoSSL + this.API;
+        this.URLIMG = "http://192.168.12.150/imagenes/";
+        this.URLTEMP = "http://192.168.12.150/SSSIFANB/temp/";
+        //this.URLSEC = "http://"+this.IP + this.PuertoSSL;
+        this.URLSEC = "http://" + this.IP + this.Puerto;
+    }
+}
+
+function CargarAPI(options){
+    var xhttp = new XMLHttpRequest();
+    xhttp.open(options.metodo, options.sURL);
+    xhttp.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem('ipsfaToken'));
+    var promise = new Promise(function(resolve, reject) {
+        xhttp.addEventListener('readystatechange', function() {
+
+            if ( xhttp.readyState === 4 && xhttp.status === 200) {
+                if(options.Objeto != undefined){
+                    options.Objeto = JSON.parse(xhttp.responseText);
+                }
+                resolve(xhttp);
+            }
+            if( xhttp.status === 401){
+              if ( xhttp.responseText != "" ) {
+                respuesta = JSON.parse(xhttp.responseText);
+                $.notify(respuesta.msj);
+              }
+            }
+        });
+
+        xhttp.addEventListener('error', function() {
+          if ( xhttp.responseText != "" ) {
+            respuesta = JSON.parse(xhttp.responseText);
+            if (respuesta.tipo != 0){
+              $.notify("Se ha Insertado correctamente", "success");
+            }else{
+              alert(xhttp.responseText);
+            }
+          }
+          reject(xhttp);
+        });
+    });
+
+    if(options.valores != undefined){
+        xhttp.send(JSON.stringify(options.valores));
+    }else{
+        xhttp.send();
+    }
+
+    return promise;
+}
+
+function CargarUrl(id, url){
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('GET', url + '.html');
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            $('#'+id).html(xhttp.responseText);
+        }
+    };
+    xhttp.onerror = function() {
+        if (this.readyState == 4 && this.status == 0) {
+            $.notify("El archivo no ha sido encontrado");
+        }
+
+    };
+    xhttp.send();
+}
+
+
+
 /*requirejs.config({
 
     baseUrl: 'js',
@@ -21,13 +97,12 @@
 requirejs(['militar','cis'],
     function   ($,        canvas,   sub) {
         alert("llega");
-    });*/
-
+    });
 
 
 class Conexion{
     constructor(){
-        this.IP = "192.168.6.45";
+        this.IP = "localhost";
         this.Puerto = ":8080";
         this.PuertoSSL = ":2608";
         this.API = "/devel/api/";
@@ -96,3 +171,4 @@ function CargarUrl(id, url){
     };
     xhttp.send();
 }
+*/

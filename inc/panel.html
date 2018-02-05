@@ -1,0 +1,89 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">Panel de Control</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form class="form-horizontal">
+    <div class="box-body">
+
+
+      <div class="col-md-12">
+        <div class="alert alert-warning alert-dismissible" id="alertcoleccion" style="display:none">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <h4><i class="icon fa fa-warning"></i> Alerta!</h4>
+
+          <a href="#" onclick="MensajeCrearColeccion()">Haz click aquí para crear la colección de reducción</a>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="box box-success box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">MongoDB - Colección</h3>
+          </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <form class="form-horizontal">
+            <div class="box-body">
+              Extraer colección de reducción para el
+              análisis y estadísticas de: titulares militares y familiares. Está opción permite
+              efectuar el conteo de cédulas afiliadas al IPSFA y servirá como archivo de
+             comparación.
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+
+              <button type="button" class="btn btn-success pull-right" onclick="ValidarColeccion()">Extraer colección</button>
+            </div>
+            <!-- /.box-footer -->
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="box box-primary box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Seguridad - Respaldos</h3>
+          </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <form class="form-horizontal">
+            <div class="box-body">
+              Respaldar permite extraer de
+              forma segura una copia fiel y exacta de la base datos de
+              MongoDB a la fecha de pulsar el click, la misma podrá ser
+              restaurada por el administrador del sistema en caso de existir
+              alguna falla.
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+
+              <button type="submit" class="btn btn-primary pull-right" >Extraer respaldo</button>
+            </div>
+            <!-- /.box-footer -->
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- /.box-body -->
+    <div class="overlay" id="_cargando" style="display:none">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+    <div class="box-footer">
+
+
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>
+</div>
+
+<div class="col-md-12">
+  <center>Fuerza Armada Nacional Bolivariana</center>
+</div>

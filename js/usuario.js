@@ -97,7 +97,7 @@ class Usuariosss{
        return this;
     }
     Salvar(){
-      console.log(JSON.stringify(this.Obtener()));
+
       var requestE = CargarAPI({
           sURL: Conn.URL + "wusuario/crud",
           metodo: 'POST',
@@ -112,7 +112,6 @@ class Usuariosss{
 
 function Salvar(){
   var usuario = new Usuariosss();
-  console.log("Enviando datos para salvar usuario");
   usuario.Salvar();
   console.log("Usuario Salvado!!!");
 
@@ -199,4 +198,86 @@ function llenarMenu(){
     listaUsuario.forEach(v => {
         $("#cmbMenu").append(`<option value='${v.cedula}'>${v.nombre}</option>`);
     });
+}
+
+
+function ValidarColeccion(){
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wpanel/data/vreduccion",
+      metodo: 'POST',
+      valores: '',
+  });
+  promesa.then(function(xhRequest) {
+      var datos = JSON.parse(xhRequest.responseText);
+
+      if (datos.tipo == 0){
+        $("#alertcoleccion").slideDown();
+      }else{
+        MensajeExtraerColeccion();
+      }
+  });
+}
+
+
+function CrearColeccion(){
+  $("#alertcoleccion").hide();
+  $("#_cargando").show();
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wpanel/data/crearreduccion",
+      metodo: 'POST',
+      valores: '',
+  });
+  promesa.then(function(xhRequest) {
+      var datos = JSON.parse(xhRequest.responseText);
+
+      $("#_cargando").hide();
+      if (datos.tipo == 0){
+        $.notify("El servidor no esta disponible...", {
+         	animate: {
+         		enter: 'animated bounceIn',
+         		exit: 'animated bounceOut'
+         	},
+           type: 'danger'
+         });
+      }else{
+        $.notify("Se ha finalizado con exito", "success");
+      }
+  });
+}
+
+
+function ExtraerColeccion(){
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wpanel/data/exreduccion",
+      metodo: 'POST',
+      valores: '',
+  });
+  promesa.then(function(xhRequest) {
+      var datos = JSON.parse(xhRequest.responseText);
+
+      if (datos.tipo == 0){
+        $("#alertcoleccion").slideDown();
+      }else{
+        $.notify("El archivo está en proceso consultar pendientes", "success");
+      }
+  });
+}
+
+
+function MensajeCrearColeccion(){
+  $("#_contenido").html("¿Está seguro que desea crear la reducción esto puede tardar varios minutos?");
+  var botones = `<button type="button" class="btn btn-success" data-dismiss="modal" id="_aceptar"
+                    onClick="CrearColeccion()">Si</button>
+                 <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>`;
+  $("#_botonesmsj").html(botones);
+  $('#modMsj').modal('show');
+}
+
+function MensajeExtraerColeccion(){
+  $("#_contenido").html("¿Está seguro que desea extraer la reducción esto puede tardar varios minutos?");
+  var botones = `<button type="button" class="btn btn-success" data-dismiss="modal" id="_aceptar"
+                    onClick="ExtraerColeccion()">Si</button>
+                 <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>`;
+  $("#_botonesmsj").html(botones);
+  $('#modMsj').modal('show');
 }

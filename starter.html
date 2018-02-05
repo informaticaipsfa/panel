@@ -15,10 +15,12 @@
         <link rel="stylesheet" href="../dist/css/fonts.googleapis.css">
         <link rel="stylesheet" href="../bower_components/select2/dist/css/select2.min.css">
         <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="../bower_components/animate/animate.css">
         <link rel="stylesheet" href="../bower_components/fancy/dist/jquery.fancybox.css">
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
         <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../bower_components/notify/notify.min.js"></script>
+
+        <script src="../bower_components/notify/bootstrap-notify.min.js"></script>
         <script src="../bower_components/select2/dist/js/select2.full.min.js"></script>
         <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -111,12 +113,13 @@
                 <section class="sidebar">
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu" data-widget="tree" id='_menu'>
-                        <li class='header'>MENU </li> 
+                        <li class='header'>MENU </li>
                         <li><a href="starter.html"><i class="ion-ios-home"></i> <span>Inicio</span></a></li>
                         <li><a href="#" onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></a></li>
                         <li><a href="#" onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
                         <li><a href="#" onclick="Pagina('configurar')"><i class="ion-settings"></i> <span>Configuracion</span></a></li>
                         <li><a href="#" onclick="Pagina('auditoria')"><i class="ion-ios-compose"></i> <span>Auditoria</span></a></li>
+                        <li><a href="#" onclick="Pagina('panel')"><i class="fa fa-gears"></i> <span>Panel</span></a></li>
                     </ul>
                     <!-- /.sidebar-menu -->
                 </section>
@@ -126,29 +129,33 @@
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <section class="content" id="panelderecho">
-                    <section class="content" id="_cuerpo">    
+                    <section class="content" id="_cuerpo">
                         <div class="row">
-                            <div class="nav-tabs-custom box box-primary"></div> <br> <br>                      
-                            <div class="col-lg-3 col-xs-6">
+
+
+
+                            <div class="col-lg-3 col-xs-4">
                               <!-- small box -->
                                 <div  class="small-box bg-aqua">
                                     <div class="inner">
-                                        <h3> Nuevo <br> Usuario</h3> 
-                                        <p></p>
+                                      <div class="inner">
+                                          <p>Usuario</p>
+                                          <h2 id="_Crm">Crear nuevo</h2>
+                                      </div>
                                     </div>
-                                    <div  class="icon"> 
+                                    <div  class="icon">
                                         <i style="cursor: pointer" onclick="Pagina('crearusuario')" class="ion-android-person-add"></i>
                                     </div>
                                     <a href="#" class="small-box-footer"> <i onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span></span></i></a>
                                 </div>
                             </div>
                             <!-- ./col -->
-                            <div class="col-lg-3 col-xs-6">
+                            <div class="col-lg-3 col-xs-4">
                               <!-- small box -->
                                 <div class="small-box bg-green">
                                     <div class="inner">
-                                        <h3><br>Listado</h3>
-                                        <p></p>
+                                      <p>Usuarios</p>
+                                      <h2 id="_Crm">Ver lista </h2>
                                     </div>
                                     <div class="icon">
                                        <i style="cursor: pointer" onclick="Pagina('listarusuario')" class="fa fa-users"></i>
@@ -157,26 +164,26 @@
                                 </div>
                             </div>
                             <!-- ./col -->
-                            <div class="col-lg-3 col-xs-6">
+                            <div class="col-lg-3 col-xs-4">
                                   <!-- small box -->
                                 <div class="small-box bg-blue">
                                     <div class="inner">
-                                        <h3><br>Configuracion</h3>
-                                        <p></p>
+                                      <p>Panel</p>
+                                      <h2 id="_Crm">De control</h2>
                                     </div>
                                     <div class="icon">
-                                        <i style="cursor: pointer" onclick="Pagina('configurar')" class="ion-settings"></i>
+                                        <i style="cursor: pointer" onclick="Pagina('panel')" class="ion-settings"></i>
                                     </div>
                                      <a href="#" class="small-box-footer"> <i onclick="Pagina('configurar')"> <i class="ion-settings"></i> <span></span></i></a>
                               </div>
                             </div>
                             <!-- ./col -->
-                            <div class="col-lg-3 col-xs-6">
+                            <div class="col-lg-3 col-xs-4">
                                   <!-- small box -->
                                 <div class="small-box bg-red">
                                     <div class="inner">
-                                        <h3><br>Auditoria</h3>
-                                        <p></p>
+                                      <p>Auditoria</p>
+                                      <h2 id="_Crm">Seguimiento</h2>
                                     </div>
                                     <div class="icon">
                                         <i style="cursor: pointer" onclick="Pagina('auditoria')" class="ion-ios-compose"></i>
@@ -195,3 +202,21 @@
         </footer>
     </body>
 </html>
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="modMsj">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="_titulo">Mensaje</h4>
+            </div>
+            <div class="modal-body" id="_contenido">
+
+            </div>
+            <div class="modal-footer" id="_botonesmsj">
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
