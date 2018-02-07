@@ -1,18 +1,78 @@
+let opciones = {
+    destroy: true,
+    'paging': true,
+    'lengthChange': true,
+    'searching': false,
+    'ordering': true,
+    'info': false,
+    'autoWidth': false,
+    "aLengthMenu": [[10, 25, 5, -1], [10, 25, 5, "Todo"]],
+    "bStateSave": true,
+    "order": [[3, "desc"]],
+    "language": {
+        "lengthMenu": "Mostar _MENU_ filas por pagina",
+        "zeroRecords": "Nada que mostrar",
+        "info": "Mostrando _PAGE_ de _PAGES_",
+        "infoEmpty": "No se encontro nada",
+        "infoFiltered": "(filtered from _MAX_ total records)",
+        "search": "Buscar",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        },
+    },
+};
+
+let opcionesf = {
+  'paging': false,
+  'searching': false,
+  'info': false
+};
+
 let listaUsuario = null;
 
 $(function () {
 
+    // var promesa = CargarAPI({
+    //     sURL: Conn.URL + "wusuario/listar",
+    //     metodo: 'GET',
+    //     valores: '',
+    // });
+    // promesa.then(function(xhRequest) {
+    //     listaUsuario = JSON.parse(xhRequest.responseText);
+    //     llenarLista();
+    //     llenarUsuarios();
+    // });
+    //  $("#cmbUsuario").select2();
+    var tblP = $('#tblPendientes').DataTable(opcionesf);
+    tblP.clear().draw();
     var promesa = CargarAPI({
-        sURL: Conn.URL + "wusuario/listar",
-        metodo: 'GET',
+        sURL: Conn.URL + "wpanel/data/listarpendientes",
+        metodo: 'POST',
         valores: '',
     });
     promesa.then(function(xhRequest) {
-        listaUsuario = JSON.parse(xhRequest.responseText);
-        llenarLista();
-        llenarUsuarios();
+        var datos = JSON.parse(xhRequest.responseText);
+        console.log(datos);
     });
-     $("#cmbUsuario").select2();
+
+
+    var tblC = $('#tblColeccion').DataTable(opcionesf);
+    tblC.clear().draw();
+
+    var promesa = CargarAPI({
+        sURL: Conn.URL + "wpanel/data/listarcolecciones",
+        metodo: 'POST',
+        valores: '',
+    });
+    promesa.then(function(xhRequest) {
+        var datos = JSON.parse(xhRequest.responseText);
+        datos.forEach(v => {
+            tblC.row.add(v).draw(false);
+        });
+    });
 });
 
 class Roles{
@@ -240,7 +300,7 @@ function CrearColeccion(){
            type: 'danger'
          });
       }else{
-        $.notify("Se ha finalizado con exito", "success");
+        $.notify("El proceso está en progreso, ver pendientes", "success");
       }
   });
 }
@@ -258,7 +318,7 @@ function ExtraerColeccion(){
       if (datos.tipo == 0){
         $("#alertcoleccion").slideDown();
       }else{
-        $.notify("El archivo está en proceso consultar pendientes", "success");
+        $.notify("El archivo está en proceso, ver pendientes", "success");
       }
   });
 }
