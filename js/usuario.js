@@ -35,46 +35,79 @@ let listaUsuario = null;
 
 $(function () {
 
-    // var promesa = CargarAPI({
-    //     sURL: Conn.URL + "wusuario/listar",
-    //     metodo: 'GET',
-    //     valores: '',
-    // });
-    // promesa.then(function(xhRequest) {
-    //     listaUsuario = JSON.parse(xhRequest.responseText);
-    //     llenarLista();
-    //     llenarUsuarios();
-    // });
-    //  $("#cmbUsuario").select2();
-    var tblP = $('#tblPendientes').DataTable(opcionesf);
-    tblP.clear().draw();
-    var promesa = CargarAPI({
-        sURL: Conn.URL + "wpanel/data/listarpendientes",
-        metodo: 'POST',
-        valores: '',
-    });
-    promesa.then(function(xhRequest) {
-        var datos = JSON.parse(xhRequest.responseText);
-        console.log(datos);
-    });
+    listarPendientes();
 
-
-    var tblC = $('#tblColeccion').DataTable(opcionesf);
-    tblC.clear().draw();
-
-    var promesa = CargarAPI({
-        sURL: Conn.URL + "wpanel/data/listarcolecciones",
-        metodo: 'POST',
-        valores: '',
-    });
-    promesa.then(function(xhRequest) {
-        var datos = JSON.parse(xhRequest.responseText);
-        datos.forEach(v => {
-            tblC.row.add(v).draw(false);
-        });
-    });
+    ListarColecciones();
 });
 
+
+function listarPendientes(){
+  var tabla = `
+  <table id="tblPendientes" class="table table-hover table-striped">
+      <thead>
+      <tr>
+          <th>Observación</th>
+          <th>Fecha de Inicio</th>
+          <th>Fecha de Fin</th>
+          <th>Estatus</th>
+      </tr>
+      </thead>
+  </table>`;
+  $("#_frmPendientes").html(tabla);
+  var tblP = $('#tblPendientes').DataTable(opcionesf);
+  tblP.clear().draw();
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wpanel/data/listarpendientes",
+      metodo: 'POST',
+      valores: '',
+  });
+  promesa.then(function(xhRequest) {
+      var datos = JSON.parse(xhRequest.responseText);
+      datos.forEach( v => {
+        var estatus = `<small class="label label-warning"></i>Pendiente</small>`;
+        var fin = "";
+        if (v.estatus == 1){
+          estatus = `<small class="label label-success">Finalizado</small>`;
+          var fin = v.fechafin;
+        }
+        tblP.row.add([
+          v.observacion,
+          v.fechainicio,
+          fin,
+          estatus
+        ]).draw(false);
+      });
+  });
+  return true;
+}
+
+
+function ListarColecciones(){
+  var tabla = `
+  <table id="tblColeccion" class="table table-hover table-striped">
+      <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+      </thead>
+  </table>`;
+  $("#_frmColeccion").html(tabla);
+  var tblC = $('#tblColeccion').DataTable(opcionesf);
+  tblC.clear().draw();
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wpanel/data/listarcolecciones",
+      metodo: 'POST',
+      valores: '',
+  });
+  promesa.then(function(xhRequest) {
+      var datos = JSON.parse(xhRequest.responseText);
+      for (var i = 0; i < datos.length; i++) {
+        tblC.row.add([datos[i]]).draw(false);
+      }
+
+  });
+  return true;
+}
 class Roles{
     constructor(){
         this.descripcion = "";
