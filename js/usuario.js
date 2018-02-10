@@ -66,12 +66,17 @@ function listarPendientes(){
       datos.forEach( v => {
         var estatus = `<small class="label label-warning"></i>Pendiente</small>`;
         var fin = "";
+        var observacion = "";
         if (v.estatus == 1){
           estatus = `<small class="label label-success">Finalizado</small>`;
           var fin = v.fechafin;
         }
+        observacion = v.observacion;
+        if (v.tipo == "CSV"){
+          observacion = `<a href="tmp/${v.codigo}.csv">${v.observacion}</a>`
+        }
         tblP.row.add([
-          v.observacion,
+          observacion,
           v.fechainicio,
           fin,
           estatus
