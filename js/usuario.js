@@ -2,7 +2,7 @@ let opciones = {
     destroy: true,
     'paging': true,
     'lengthChange': true,
-    'searching': false,
+    'searching': true,
     'ordering': true,
     'info': false,
     'autoWidth': false,
@@ -15,7 +15,7 @@ let opciones = {
         "info": "Mostrando _PAGE_ de _PAGES_",
         "infoEmpty": "No se encontro nada",
         "infoFiltered": "(filtered from _MAX_ total records)",
-        "search": "Buscar",
+        "search": "Buscar&nbsp;&nbsp;",
         "paginate": {
             "first": "Primero",
             "last": "Ultimo",
