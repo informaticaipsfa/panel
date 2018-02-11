@@ -1,297 +1,306 @@
+<div class="box box-success box-solid">
+  <div class="box-header with-border">
+    <h3 class="box-title">Crear Usuario</h3>
+    <div class="pull-right box-tools">
+      <!-- <button type="button" class="btn btn-info btn-sm
+      daterange pull-right" onClick="" data-toggle="tooltip" title="Actualizar">
+      <i class="fa fa-refresh"></i></button> -->
+    </div>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form class="form-horizontal">
+    <div class="box-body" id="_frmCrearUsuario">
 
 
-    <div class="nav-tabs-custom">
-         <div class="tab-content">
-          <h4 class="box-title">Crear Usuario</h4>
-                  <div class="tab-pane active" id="tab_1">
-                                   <div class="nav-tabs-custom box box-primary"></div>
-                                   <div class="row">
-                                        <div class="col-md-4 col-sm-12">
-                                            <div class="form-group">
-                                              <label>Fecha de Creacion</label>
-                                                <div class="input-group">
-                                                   <span class="input-group-addon">
-                                                     <i class="fa fa-calendar"></i>
-                                                   </span>
-                                                       <input type="text" readonly="readonly" class="form-control" id="fechaCreacion" placeholder="Fecha de creación"/>
-                                                </div>
-                                            </div>
-                                          </div>
-                                        <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                                  <label>Sistema</label>
-                                                     <div class="input-group">
-                                                       <span class="input-group-addon"><span class="fa fa-check-square-o"></span></span>
-                                                           <select class="form-control" id="sistema">
-                                                               <option value="0">Seleccionar...</option>
-                                                               <option value="Afiliacion">Afiliacion</option>
-                                                               <option value="Cuidado Integral De La Salùd">Cuidado Integral De La Salùd</option>
-                                                           </select>
-                                                     </div>
-                                              </div>
-                                        </div>
+           <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                 <label>Fecha de Creacion</label>
+                   <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </span>
+                          <input type="text" readonly="readonly" class="form-control" id="fechaCreacion" placeholder="Fecha de creación"/>
+                   </div>
+               </div>
+             </div>
+           <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                     <label>Sistema</label>
+                        <div class="input-group">
+                          <span class="input-group-addon"><span class="fa fa-check-square-o"></span></span>
+                              <select class="form-control" id="sistema">
+                                  <option value="0">Seleccionar...</option>
+                                  <option value="Afiliacion">Afiliacion</option>
+                                  <option value="Cuidado Integral De La Salùd">Cuidado Integral De La Salùd</option>
+                              </select>
+                        </div>
+                 </div>
+           </div>
 
-                                        <div class="col-md-4 col-sm-12">
-                                            <div class="form-group">
-                                             <label>Gerencia</label>
-                                             <div class="input-group">
-                                             <span class="input-group-addon"><span class="ion-ios-paper-outline"></span></span>
-                                             <select class="form-control" id="cmbGerencia">
-                                             <option value="0">Seleccionar...</option>
-                                             <option value="">Presidencia</option>
-                                             <option value="">VicePresidencia</option>
-                                             <option value="">Secretaria General</option>
-                                             <option value="">Afiliacion</option>
-                                             <option value="">Bienestar Social</option>
-                                             <option value="">Drogueria y Farmacia</option>
-                                             <option value="">Crédito</option>
-                                             <option value="">Odontólogia</option>
-                                             <option value="">Vivienda</option>
-                                             <option value="">Consultoria Jurídica</option>
-                                             <option value="">Recursos Humanos</option>
-                                             <option value="">Auditoria Interna</option>
-                                             <option value="">Informática</option>
-                                             <option value="">Finanzas</option>
-                                             <option value="">Logística</option>
-                                             </select>
-                                            </div>
-                                            </div>
-                                        </div>
-                                  </div>
-
-                                  <div class="row">
-                                        <div class="col-md-4 col-sm-12">
-                                            <div class="form-group">
-                                               <label>Sucursal</label>
-                                               <div class="input-group">
-                                                <span class="input-group-addon"><span class="ion-android-clipboard"></span></span>
-                                                  <select class="form-control" id="cmbSucursal">
-                                                           <option value="0">Seleccionar...</option>
-                                                           <option value="">Caracas</option>
-                                                           <option value="">Maracay</option>
-                                                           <option value="">Barquisimeto</option>
-                                                           <option value="">Maracaibo</option>
-                                                           <option value="">Ciudad Bolivar</option>
-                                                           <option value="">Punto Fijo</option>
-                                                           <option value="">San Cristobal</option>
-                                                           <option value="">Apure</option>
-                                                           <option value="">Barinas</option>
-                                                           <option value="">Barcelona</option>
-                                                           <option value="">Cumana</option>
-                                                           <option value="">Margarita</option>
-                                                           <option value="">Maturin</option>
-                                                           <option value="">Tucupita</option>
-                                                           <option value="">Puerto Ayacucho</option>
-                                                    </select>
-                                               </div>
-                                            </div>
-                                          </div>
-                                         <div class="col-md-4 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Departamento</label>
-                                                   <div class="input-group">
-                                                      <span class="input-group-addon"><span class="ion-social-buffer"></span></span>
-                                                         <input type="text" class="form-control" id="departamento" placeholder="Departamento" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
-                                                   </div>
-                                            </div>
-                                        </div>
+           <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                <label>Gerencia</label>
+                <div class="input-group">
+                <span class="input-group-addon"><span class="ion-ios-paper-outline"></span></span>
+                <select class="form-control" id="cmbGerencia">
+                <option value="0">Seleccionar...</option>
+                <option value="">Presidencia</option>
+                <option value="">VicePresidencia</option>
+                <option value="">Secretaria General</option>
+                <option value="">Afiliacion</option>
+                <option value="">Bienestar Social</option>
+                <option value="">Drogueria y Farmacia</option>
+                <option value="">Crédito</option>
+                <option value="">Odontólogia</option>
+                <option value="">Vivienda</option>
+                <option value="">Consultoria Jurídica</option>
+                <option value="">Recursos Humanos</option>
+                <option value="">Auditoria Interna</option>
+                <option value="">Informática</option>
+                <option value="">Finanzas</option>
+                <option value="">Logística</option>
+                </select>
+               </div>
+               </div>
+           </div>
+           <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                  <label>Sucursal</label>
+                  <div class="input-group">
+                   <span class="input-group-addon"><span class="ion-android-clipboard"></span></span>
+                     <select class="form-control" id="cmbSucursal">
+                              <option value="0">Seleccionar...</option>
+                              <option value="">Caracas</option>
+                              <option value="">Maracay</option>
+                              <option value="">Barquisimeto</option>
+                              <option value="">Maracaibo</option>
+                              <option value="">Ciudad Bolivar</option>
+                              <option value="">Punto Fijo</option>
+                              <option value="">San Cristobal</option>
+                              <option value="">Apure</option>
+                              <option value="">Barinas</option>
+                              <option value="">Barcelona</option>
+                              <option value="">Cumana</option>
+                              <option value="">Margarita</option>
+                              <option value="">Maturin</option>
+                              <option value="">Tucupita</option>
+                              <option value="">Puerto Ayacucho</option>
+                       </select>
+                  </div>
+               </div>
+             </div>
+            <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                   <label>Departamento</label>
+                      <div class="input-group">
+                         <span class="input-group-addon"><span class="ion-social-buffer"></span></span>
+                            <input type="text" class="form-control" id="departamento" placeholder="Departamento" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
+                      </div>
+               </div>
+           </div>
 
 
-                                       <div class="col-md-4 col-sm-12">
-                                          <div class="form-group">
-                                             <label>Area De Trabajo</label>
-                                              <div class="input-group">
-                                                <span class="input-group-addon"><span class="ion-android-folder-open"></span></span>
-                                                   <input type="text" class="form-control" id="areaTrabajo" placeholder="Area De Trabajo" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
-                                             </div>
-                                          </div>
-                                        </div>
-                                  </div> 
-                                    <div class="nav-tabs-custom box box-primary"></div> 
-                                      <div class="row">
-                                            <div class="col-md-4 col-sm-12">
-                                               <div class="form-group">
-                                                 <label>Cédula del Usuario</label>
-                                                    <div class="input-group">
-                                                      <span class="input-group-addon"><span class="ion-person"></span></span>
-                                                        <input type="text" class="form-control" id="cedula" placeholder="Cédula del Usuario" maxlength="8" onkeypress="return Util.SoloNumero(event)"/>
-                                                   </div>
-                                              </div>
-                                           </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <div class="form-group">
-                                               <label>Nombres</label>
-                                                 <div class="input-group">
-                                                    <span class="input-group-addon"><span class="ion-android-person"></span></span>
-                                                      <input type="text" class="form-control" id="nombres" placeholder="Nombre Completo del Usuario" maxlength="50" onkeypress=" return Util.SoloLetras(event)"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                              <div class="form-group">
-                                                 <label>Apellidos</label>
-                                                 <div class="input-group">
-                                                    <span class="input-group-addon"><span class="ion-android-contact"></span></span>
-                                                      <input type="text" class="form-control" id="apellidos" placeholder="Nombre Completo del Usuario" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
-                                                </div>
-                                             </div>
-                                          </div>
-                                        </div>
-   
-                                    <div class="row">
-                                         <div class="col-md-4 col-sm-12">
-                                            <div class="form-group">
-                                               <label>Dirección De Domicilio</label>
-                                                  <div class="input-group">
-                                                     <span class="input-group-addon"><span class="fa fa-book"></span></span>
-                                                        <input type="text" class="form-control" id="direccionDomicilio" placeholder="Dirección De Domicilio" maxlength="50" />
-                                                  </div>
-                                             </div>
-                                          </div>
-                                         <div class="col-md-4 col-sm-12">
-                                           <div class="form-group">
-                                             <label>Teléfono</label>
-                                                <div class="input-group">
-                                                   <span class="input-group-addon"><span class="fa fa-phone"></span></span>
-                                                     <input type="text" class="form-control" id="telefono" placeholder="Teléfono" maxlength="11" onkeypress=" return Util.SoloNumero(event)"/>
-                                                </div>
-                                            </div>
-                                         </div>
-                                        <div class="col-md-4 col-sm-12">
-                                           <div class="form-group">
-                                              <label>Correo Electrónico</label>
-                                                <div class="input-group">
-                                                  <span class="input-group-addon"><span class="ion-at"></span></span>
-                                                    <input type="email" class="form-control" id="correo" placeholder="Correo Electronico" maxlength="50"/>
-                                                </div>
-                                           </div>
-                                        </div>
-                                    </div>
-                                    <div class="nav-tabs-custom box box-primary"></div> 
-                                      <div class="row">
-                                         <div class="col-md-4 col-sm-12">
-                                            <div class="form-group">
-                                               <label>Usuario</label>
-                                                  <div class="input-group">
-                                                     <span class="input-group-addon"><span class="fa fa-user"></span></span>
-                                                         <input type="text" class="form-control" id="usuario" placeholder="Usuario" maxlength="15" />
-                                                 </div>
-                                           </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                                 <label>Estatus</label>
-                                                   <div class="input-group">
-                                                      <span class="input-group-addon"><span class="fa fa-check-square-o"></span></span>
-                                                          <select class="form-control" id="estatus">
-                                                              <option value="0">Seleccionar...</option>
-                                                              <option value="292">Activo</option>
-                                                              <option value="293">Inactivo</option>
-                                                         </select>
-                                                   </div>
-                                              </div>
-                                          </div>
-                                        <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                                <label>Situacion</label>
-                                                   <div class="input-group">
-                                                     <span class="input-group-addon"><span class="fa fa-check-square-o"></span></span>
-                                                       <select class="form-control" id="situacion">
-                                                           <option value="0">Seleccionar...</option>
-                                                           <option value="292">Personal Militar</option>
-                                                           <option value="293">Personal Civil</option>
-                                                      </select>
-                                                   </div>
-                                             </div>
-                                        </div>
-                                      </div>
-                                   <div class="row">
-                                   	  <div class="col-md-4 col-sm-12">
-                                         <div class="form-group">
-                                             <label>Funciones</label>
-                                                <div class="input-group">
-                                                   <span class="input-group-addon"><span class="ion-filing"></span></span>
-                                                       <input type="text" class="form-control" id="funciones" placeholder="Funciones" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
-                                                </div>
-                                          </div>
-                                      </div>
-                                         <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                                <label>Cargo</label>
-                                                   <div class="input-group">
-                                                      <span class="input-group-addon"><span class="ion-compose"></span></span>
-                                                        <input type="text" class="form-control" id="cargo" placeholder="Cargo" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
-                                                    </div>
-                                             </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                             <label>Perfil</label>
-                                             <div class="input-group">
-                                             <span class="input-group-addon"><span class="ion-ios-book"></span></span>
-                                             <input type="text" class="form-control" id="perfilUsuario" placeholder="Perfil" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
-                                             </div>
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-12">
-                                           <div class="form-group">
-                                              <label>Rol</label>
-                                                 <div class="input-group">
-                                                     <span class="input-group-addon"><span class="fa fa-users"></span></span>
-                                                       <input type="text" class="form-control" id="rolUsuario" placeholder="Rol de Usuario" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
-                                                </div>
-                                            </div>
-                                       </div>
-                                             <div class="col-md-4 col-sm-12">
-                                                <div class="form-group">
-                                                  <label>Clave</label>
-                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><span class="fa fa-key"></span></span>
-                                                          <input type="password" class="form-control" id="clave" placeholder="Clave" maxlength="10"/>
-                                                     </div>
-                                                </div>
-                                             </div>
-                                        <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                                <label>Confirmar Clave</label>
-                                                   <div class="input-group">
-                                                     <span class="input-group-addon"><span class="fa fa-key"></span></span>
-                                                        <input type="password" class="form-control" id="rclave" placeholder="Repetir Clave" maxlength="10"/>
-                                                   </div>
-                                             </div>
-                                        </div>
-                                    </div>
-                                <div class="nav-tabs-custom box box-primary"></div>
-                                  <div class="row">
-                                      <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                             <label>Dirección IP</label>
-                                             <div class="input-group">
-                                             <span class="input-group-addon"><span class="ion-edit"></span></span>
-                                             <input type="text" class="form-control" id="direccionIp" placeholder="Direccion IP" maxlength="15" />
-                                             </div>
-                                             </div>
-                                      </div>
-                                      <div class="col-md-4 col-sm-12">
-                                             <div class="form-group">
-                                             <label>Dirección MAC</label>
-                                             <div class="input-group">
-                                             <span class="input-group-addon"><span class="fa fa-laptop"></span></span>
-                                             <input type="text" class="form-control" id="direccionMac" placeholder="Direccion MAC" maxlength="25" />
-                                             </div>
-                                             </div>
-                                      </div>
-                                  </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12">
-                                      <div class="pull-right">
-                                        <button type="button" class="btn btn-success" onclick= "Salvar()"><i class="fa fa-plus"></i>&nbsp;Agregar o actualizar
-                                        </button> 
-                                      </div> 
-                                    </div> 
-                                </div> <br> 
-              </div>  
-      </div> 
-   </div> 
+          <div class="col-md-4 col-sm-12">
+             <div class="form-group">
+                <label>Area De Trabajo</label>
+                 <div class="input-group">
+                   <span class="input-group-addon"><span class="ion-android-folder-open"></span></span>
+                      <input type="text" class="form-control" id="areaTrabajo" placeholder="Area De Trabajo" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
+                </div>
+             </div>
+           </div>
+
+           <div class="col-md-12 col-sm-12">
+             <div class="nav-tabs-custom box box-primary"></div>
+           </div>
+
+
+           <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label>Cédula del Usuario</label>
+                   <div class="input-group">
+                     <span class="input-group-addon"><span class="ion-person"></span></span>
+                       <input type="text" class="form-control" id="cedula" placeholder="Cédula del Usuario" maxlength="8" onkeypress="return Util.SoloNumero(event)"/>
+                  </div>
+             </div>
+          </div>
+       <div class="col-md-4 col-sm-12">
+           <div class="form-group">
+              <label>Nombres</label>
+                <div class="input-group">
+                   <span class="input-group-addon"><span class="ion-android-person"></span></span>
+                     <input type="text" class="form-control" id="nombres" placeholder="Nombre Completo del Usuario" maxlength="50" onkeypress=" return Util.SoloLetras(event)"/>
+               </div>
+           </div>
+       </div>
+       <div class="col-md-4 col-sm-12">
+             <div class="form-group">
+                <label>Apellidos</label>
+                <div class="input-group">
+                   <span class="input-group-addon"><span class="ion-android-contact"></span></span>
+                     <input type="text" class="form-control" id="apellidos" placeholder="Nombre Completo del Usuario" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+               <label>Dirección De Domicilio</label>
+                  <div class="input-group">
+                     <span class="input-group-addon"><span class="fa fa-book"></span></span>
+                        <input type="text" class="form-control" id="direccionDomicilio" placeholder="Dirección De Domicilio" maxlength="50" />
+                  </div>
+             </div>
+          </div>
+         <div class="col-md-4 col-sm-12">
+           <div class="form-group">
+             <label>Teléfono</label>
+                <div class="input-group">
+                   <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                     <input type="text" class="form-control" id="telefono" placeholder="Teléfono" maxlength="11" onkeypress=" return Util.SoloNumero(event)"/>
+                </div>
+            </div>
+         </div>
+        <div class="col-md-4 col-sm-12">
+           <div class="form-group">
+              <label>Correo Electrónico</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="ion-at"></span></span>
+                    <input type="email" class="form-control" id="correo" placeholder="Correo Electronico" maxlength="50"/>
+                </div>
+           </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-12">
+           <div class="form-group">
+              <label>Usuario</label>
+                 <div class="input-group">
+                    <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                        <input type="text" class="form-control" id="usuario" placeholder="Usuario" maxlength="15" />
+                </div>
+          </div>
+       </div>
+       <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+                <label>Estatus</label>
+                  <div class="input-group">
+                     <span class="input-group-addon"><span class="fa fa-check-square-o"></span></span>
+                         <select class="form-control" id="estatus">
+                             <option value="0">Seleccionar...</option>
+                             <option value="292">Activo</option>
+                             <option value="293">Inactivo</option>
+                        </select>
+                  </div>
+             </div>
+         </div>
+       <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+               <label>Situacion</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="fa fa-check-square-o"></span></span>
+                      <select class="form-control" id="situacion">
+                          <option value="0">Seleccionar...</option>
+                          <option value="292">Personal Militar</option>
+                          <option value="293">Personal Civil</option>
+                     </select>
+                  </div>
+            </div>
+       </div>
+
+       <div class="col-md-12 col-sm-12">
+         <div class="nav-tabs-custom box box-primary"></div>
+       </div>
+
+
+       <div class="col-md-4 col-sm-12">
+          <div class="form-group">
+              <label>Funciones</label>
+                 <div class="input-group">
+                    <span class="input-group-addon"><span class="ion-filing"></span></span>
+                        <input type="text" class="form-control" id="funciones" placeholder="Funciones" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
+                 </div>
+           </div>
+       </div>
+          <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                 <label>Cargo</label>
+                    <div class="input-group">
+                       <span class="input-group-addon"><span class="ion-compose"></span></span>
+                         <input type="text" class="form-control" id="cargo" placeholder="Cargo" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
+                     </div>
+              </div>
+         </div>
+         <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+              <label>Perfil</label>
+              <div class="input-group">
+              <span class="input-group-addon"><span class="ion-ios-book"></span></span>
+              <input type="text" class="form-control" id="perfilUsuario" placeholder="Perfil" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
+              </div>
+              </div>
+         </div>
+
+
+         <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+               <label>Rol</label>
+                  <div class="input-group">
+                      <span class="input-group-addon"><span class="fa fa-users"></span></span>
+                        <input type="text" class="form-control" id="rolUsuario" placeholder="Rol de Usuario" maxlength="50" onkeypress="return Util.SoloLetras(event)"/>
+                 </div>
+             </div>
+        </div>
+              <div class="col-md-4 col-sm-12">
+                 <div class="form-group">
+                   <label>Clave</label>
+                      <div class="input-group">
+                         <span class="input-group-addon"><span class="fa fa-key"></span></span>
+                           <input type="password" class="form-control" id="clave" placeholder="Clave" maxlength="10"/>
+                      </div>
+                 </div>
+              </div>
+         <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                 <label>Confirmar Clave</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><span class="fa fa-key"></span></span>
+                         <input type="password" class="form-control" id="rclave" placeholder="Repetir Clave" maxlength="10"/>
+                    </div>
+              </div>
+         </div>
+         <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                <label>Dirección IP</label>
+                <div class="input-group">
+                <span class="input-group-addon"><span class="ion-edit"></span></span>
+                <input type="text" class="form-control" id="direccionIp" placeholder="Direccion IP" maxlength="15" />
+                </div>
+                </div>
+         </div>
+         <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                <label>Dirección MAC</label>
+                <div class="input-group">
+                <span class="input-group-addon"><span class="fa fa-laptop"></span></span>
+                <input type="text" class="form-control" id="direccionMac" placeholder="Direccion MAC" maxlength="25" />
+                </div>
+                </div>
+         </div>
+
+
+
+    </div>
+    <div class="overlay" id="_cargandoc" style="display:none">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <button type="button" class="btn btn-success" onclick= "Salvar()"><i class="fa fa-plus"></i>&nbsp;Agregar o actualizar
+      </button>
+
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>

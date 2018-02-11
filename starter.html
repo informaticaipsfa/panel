@@ -114,12 +114,12 @@
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu" data-widget="tree" id='_menu'>
                         <li class='header'>MENU </li>
-                        <li><a href="starter.html"><i class="ion-ios-home"></i> <span>Inicio</span></a></li>
-                        <li><a href="#" onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></a></li>
+                        <li><a href="starter.html"><i class="ion-ios-home"></i> <span>Principal</span></a></li>
+                        <li><a href="#" onclick="Pagina('panel')"><i class="fa fa-gears"></i> <span>Panel de Control</span></a></li>
                         <li><a href="#" onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
-                        <li><a href="#" onclick="Pagina('configurar')"><i class="ion-settings"></i> <span>Configuracion</span></a></li>
+                        <li><a href="#" onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span>Crear Usuarios</span></a></li>
+                        <li><a href="#" onclick="Pagina('configurar')"><i class="ion-settings"></i> <span>Configurar Usuarios</span></a></li>
                         <li><a href="#" onclick="Pagina('auditoria')"><i class="ion-ios-compose"></i> <span>Auditoria</span></a></li>
-                        <li><a href="#" onclick="Pagina('panel')"><i class="fa fa-gears"></i> <span>Panel</span></a></li>
                     </ul>
                     <!-- /.sidebar-menu -->
                 </section>
@@ -132,64 +132,72 @@
                     <section class="content" id="_cuerpo">
                         <div class="row">
 
+                          <!-- ./col -->
+                          <div class="col-lg-3 col-xs-6 col-md-6">
+                                <!-- small box -->
+                                <a href="#" onclick="Pagina('panel')">
+                                    <div class="small-box bg-blue">
+                                        <div class="inner">
+                                          <p>Panel</p>
+                                          <h2 id="_Crm">De control</h2>
+                                        </div>
+                                        <div class="icon">
+                                            <i style="cursor: pointer" class="fa fa-gears"></i>
+                                        </div>
+                                         <!-- <a href="#" class="small-box-footer"> <i onclick="Pagina('configurar')"> <i class="ion-settings"></i> <span></span></i></a> -->
+                                  </div>
+                                </a>
+                          </div>
 
+                          <!-- ./col -->
+                          <div class="col-lg-3 col-xs-6  col-md-6">
+                            <!-- small box -->
+                              <a href="#" onclick="Pagina('listarusuario')">
+                                <div class="small-box bg-teal">
+                                    <div class="inner">
+                                      <p>Usuarios</p>
+                                      <h2 id="_Crm">Listar </h2>
+                                    </div>
+                                    <div class="icon">
+                                       <i style="cursor: pointer" class="fa fa-users"></i>
+                                    </div>
+                                </div>
+                              </a>
+                          </div>
 
                             <div class="col-lg-3 col-xs-6 col-md-6">
                               <!-- small box -->
-                                <div  class="small-box bg-aqua">
+                              <a href="#" onclick="Pagina('crearusuario')">
+                                <div  class="small-box bg-purple">
                                     <div class="inner">
                                       <div class="inner">
-                                          <p>Usuario</p>
-                                          <h2 id="_Crm">Crear nuevo</h2>
+                                          <p>Usuarios</p>
+                                          <h2 id="_Crm">Crear</h2>
                                       </div>
                                     </div>
                                     <div  class="icon">
-                                        <i style="cursor: pointer" onclick="Pagina('crearusuario')" class="ion-android-person-add"></i>
+                                        <i style="cursor: pointer" class="ion-android-person-add"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer"> <i onclick="Pagina('crearusuario')"><i class="ion-android-person-add"></i> <span></span></i></a>
                                 </div>
+                              </a>
                             </div>
-                            <!-- ./col -->
-                            <div class="col-lg-3 col-xs-6  col-md-6">
-                              <!-- small box -->
-                                <div class="small-box bg-green">
-                                    <div class="inner">
-                                      <p>Usuarios</p>
-                                      <h2 id="_Crm">Ver lista </h2>
-                                    </div>
-                                    <div class="icon">
-                                       <i style="cursor: pointer" onclick="Pagina('listarusuario')" class="fa fa-users"></i>
-                                    </div>
-                                    <a href="#" class="small-box-footer"> <i onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span></span></i></a>
-                                </div>
-                            </div>
+
+
                             <!-- ./col -->
                             <div class="col-lg-3 col-xs-6 col-md-6">
                                   <!-- small box -->
-                                <div class="small-box bg-blue">
-                                    <div class="inner">
-                                      <p>Panel</p>
-                                      <h2 id="_Crm">De control</h2>
-                                    </div>
-                                    <div class="icon">
-                                        <i style="cursor: pointer" onclick="Pagina('panel')" class="ion-settings"></i>
-                                    </div>
-                                     <a href="#" class="small-box-footer"> <i onclick="Pagina('configurar')"> <i class="ion-settings"></i> <span></span></i></a>
-                              </div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-lg-3 col-xs-6 col-md-6">
-                                  <!-- small box -->
-                                <div class="small-box bg-red">
-                                    <div class="inner">
-                                      <p>Auditoria</p>
-                                      <h2 id="_Crm">Seguimiento</h2>
-                                    </div>
-                                    <div class="icon">
-                                        <i style="cursor: pointer" onclick="Pagina('auditoria')" class="ion-ios-compose"></i>
-                                    </div>
-                                    <a href="#" class="small-box-footer"> <i onclick="Pagina('auditoria')"> <i class="ion-ios-compose"></i> <span></span></i></a>
-                                </div>
+                                <a href="#" onclick="Pagina('auditoria')">
+                                  <div class="small-box bg-red">
+                                      <div class="inner">
+                                        <p>Auditoria</p>
+                                        <h2 id="_Crm">Seguimiento</h2>
+                                      </div>
+                                      <div class="icon">
+                                          <i style="cursor: pointer" class="ion-ios-compose"></i>
+                                      </div>
+
+                                  </div>
+                                </a>
                             </div>
                       </div>
                       <div class="row">
@@ -227,7 +235,7 @@
                         <div class="col-md-3 col-xs-12">
                           <div class="box box-info box-solid">
                             <div class="box-header with-border">
-                              <h3 class="box-title">Colecciones</h3>
+                              <h3 class="box-title">MongoDB</h3>
                               <div class="pull-right box-tools">
                                 <button type="button" class="btn btn-info btn-sm
                                 daterange pull-right" data-toggle="tooltip" title="Actualizar">

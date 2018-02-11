@@ -34,9 +34,7 @@ let opcionesf = {
 let listaUsuario = null;
 
 $(function () {
-
     listarPendientes();
-
     ListarColecciones();
 });
 
@@ -113,6 +111,8 @@ function ListarColecciones(){
   });
   return true;
 }
+
+
 class Roles{
     constructor(){
         this.descripcion = "";
@@ -153,7 +153,7 @@ class FirmaDigital{
     }
 }
 
-class Usuariosss{
+class Usuario{
     constructor(){
         this.fechaCreacion = "";
         this.sistema = "";
@@ -209,7 +209,7 @@ class Usuariosss{
 }
 
 function Salvar(){
-  var usuario = new Usuariosss();
+  var usuario = new Usuario();
   usuario.Salvar();
   console.log("Usuario Salvado!!!");
 

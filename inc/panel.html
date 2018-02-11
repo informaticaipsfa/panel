@@ -82,6 +82,132 @@
     <!-- /.box-footer -->
   </form>
 </div>
+
+
+
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">Operaciones ( Carné )</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form class="form-horizontal">
+    <div class="box-body" id="_frmCarne">
+      <div class="col-md-6">
+        <div class="box box-info box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Estatus</h3>
+          </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="col-md-12">
+                Al cambiar estatus de un carné automaticamente lo moverá de las bandejas de: Aprobación, Impresión, etc...
+                <br><br>
+              </div>
+              <div class="col-md-6 col-sm-12">
+
+                <label>Estatus:</label>
+                <select class="js-states form-control" style="width: 100%"  aria-hidden="true" id="cmbestatus" required >
+                  <option value=0>APROBACION</option>
+                  <option value=1>IMPRESION</option>
+                  <option value=2>RECHAZO</option>
+                  <option value=3>ACEPTADO</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <label>Código:</label>
+                <input type="text" id="txtNumeroCarnet" class="form-control">
+              </div>
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+
+              <button type="submit" class="btn btn-info pull-right" >Cambiar estatus</button>
+            </div>
+            <!-- /.box-footer -->
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="box box-danger box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Limpiar</h3>
+          </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="col-md-12">
+                Al limpiar la bandeja de los carnés automaticamente los moverá a: Estatus de rechazados.
+                <br><br>
+              </div>
+
+              <div class="col-md-6 col-sm-12">
+                <label>Sucursal:</label>
+                <select class="form-control" id="cmbsucursal">
+                  <option value="ccs">CARACAS</option>
+                  <option value="car">CARUPANO</option>
+                  <option value="may">MARACAY</option>
+                  <option value="mar">MARACAIBO</option>
+                  <option value="bqt">BARQUISIMETO</option>
+                  <option value="san">SAN CRISTOBAL</option>
+                  <option value="bar">BARINAS</option>
+                  <option value="mag">MARGARITA</option>
+                  <option value="sju">SAN JUAN</option>
+                  <option value="bac">BARCELONA</option>
+                  <option value="tuc">TUCUPITA</option>
+                  <option value="pto">PUERTO AYACUCHO</option>
+                  <option value="apu">APURE</option>
+                  <option value="pun">PUNTO FIJO</option>
+                  <option value="bol">CIUDAD BOLIVAR</option>
+                  <option value="mat">MATURIN</option>
+
+                </select>
+              </div>
+              <div class="col-md-6 col-sm-12">
+
+                <label>Estatus:</label>
+                <select class="js-states form-control" style="width: 100%"  aria-hidden="true" id="cmbestatus" required >
+                  <option value=0>APROBACION</option>
+                  <option value=1>IMPRESION</option>
+                  <option value=2>RECHAZO</option>
+                  <option value=3>ACEPTADO</option>
+                </select>
+              </div>
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+
+              <button type="submit" class="btn btn-danger pull-right" >Limpiar bandeja</button>
+            </div>
+            <!-- /.box-footer -->
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="overlay" id="_cargandoc" style="display:none">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+
+
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>
+
+
+
+
 </div>
 
 <div class="col-md-12">
