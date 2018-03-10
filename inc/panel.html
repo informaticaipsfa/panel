@@ -149,7 +149,7 @@
 
               <div class="col-md-6 col-sm-12">
                 <label>Sucursal:</label>
-                <select class="form-control" id="cmbsucursal">
+                <select class="form-control" id="cmbSucursalCarnet">
                   <option value="ccs">CARACAS</option>
                   <option value="car">CARUPANO</option>
                   <option value="may">MARACAY</option>
@@ -172,11 +172,13 @@
               <div class="col-md-6 col-sm-12">
 
                 <label>Estatus:</label>
-                <select class="js-states form-control" style="width: 100%"  aria-hidden="true" id="cmbestatus" required >
+                <select class="js-states form-control" 
+                style="width: 100%"  aria-hidden="true" id="cmbEstatusCarnet" required >
                   <option value=0>APROBACION</option>
                   <option value=1>IMPRESION</option>
                   <option value=2>RECHAZO</option>
                   <option value=3>ACEPTADO</option>
+                  <option value=5>ELIMINADO POR SISTEMA</option>
                 </select>
               </div>
 
@@ -184,7 +186,7 @@
             <!-- /.box-body -->
             <div class="box-footer">
 
-              <button type="submit" class="btn btn-danger pull-right" >Limpiar bandeja</button>
+              <button onclick="LimpiarBandejaCarnet();" class="btn btn-danger pull-right" >Limpiar bandeja</button>
             </div>
             <!-- /.box-footer -->
           </form>

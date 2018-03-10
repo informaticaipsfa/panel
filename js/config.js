@@ -5,8 +5,8 @@ class Conexion{
         this.PuertoSSL = ":2608";
         this.API = "/ipsfa/api/";
         this.URL = "https://" + this.IP + this.PuertoSSL + this.API;
-        this.URLIMG = "http://192.168.12.150/imagenes/";
-        this.URLTEMP = "http://192.168.12.150/SSSIFANB/temp/";
+        this.URLIMG = "http://192.168.11.34/imagenes/";
+        this.URLTEMP = "http://192.168.12.34/SSSIFANB/temp/";
         //this.URLSEC = "http://"+this.IP + this.PuertoSSL;
         this.URLSEC = "http://" + this.IP + this.Puerto;
     }

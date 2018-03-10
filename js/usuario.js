@@ -361,6 +361,31 @@ function ExtraerColeccion(){
   });
 }
 
+function LimpiarBandejaCarnet(){    
+    var sucursal = $("#cmbSucursalCarnet").val();
+    var estatus = $("#cmbEstatusCarnet").val();
+    var url = `${Conn.URL}carnet/limpiar/${estatus}/${sucursal}`;
+    var promesa = CargarAPI({
+        sURL: url,
+        metodo: 'GET',
+        valores: '',
+    })
+    .then(function(xhRequest) {
+        var datos = JSON.parse(xhRequest.responseText);
+        if (datos.tipo == 0){
+            $.notify("El servidor no esta disponible...", {
+                animate: {
+                    enter: 'animated bounceIn',
+                    exit: 'animated bounceOut'
+                },
+              type: 'danger'
+            });
+        }else{
+          $.notify("proceso finalizado", "success");
+        }
+    });
+    console.log(url);
+}
 
 function MensajeCrearColeccion(){
   $("#_contenido").html("¿Está seguro que desea crear la reducción esto puede tardar varios minutos?");
@@ -379,3 +404,5 @@ function MensajeExtraerColeccion(){
   $("#_botonesmsj").html(botones);
   $('#modMsj').modal('show');
 }
+
+
