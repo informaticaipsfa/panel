@@ -405,4 +405,37 @@ function MensajeExtraerColeccion(){
   $('#modMsj').modal('show');
 }
 
+function MensajeExtraerDatos(){
+    $("#_contenido").html("¿Está seguro que desea extraer datos para Mysql esto puede tardar varios minutos?");
+    var botones = `<button type="button" class="btn btn-success" data-dismiss="modal" id="_aceptar"
+                      onClick="ExtraerDatos()">Si</button>
+                   <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>`;
+    $("#_botonesmsj").html(botones);
+    $('#modMsj').modal('show');
+  }
+  
 
+
+
+
+function ExtraerDatos(){
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wpanel/data/extraerdatosmysql",
+      metodo: 'POST',
+      valores: '',
+  });
+  promesa.then(function(xhRequest) {
+    var datos = JSON.parse(xhRequest.responseText);
+    if (datos.tipo == 0){
+        $.notify("El servidor no esta disponible...", {
+            animate: {
+                enter: 'animated bounceIn',
+                exit: 'animated bounceOut'
+            },
+          type: 'danger'
+        });
+    }else{
+      $.notify("proceso finalizado", "success");
+    }
+  });
+}
