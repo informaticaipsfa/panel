@@ -70,9 +70,19 @@ function listarPendientes(){
           var fin = v.fechafin;
         }
         observacion = v.observacion;
-        if (v.tipo == "CSV"){
-          observacion = `<a href="tmp/${v.codigo}.csv">${v.observacion}</a>`
+        switch (v.tipo) {
+            case "CSV":
+              observacion = `<a href="tmp/${v.codigo}.csv">${v.observacion}</a>`
+            break;
+            case "LOG":
+              observacion = `<a href="tmp/${v.codigo}.log" target="top">${v.observacion}</a>`
+            break;
+          default:
+
         }
+        // if (v.tipo == "CSV"){
+        //   observacion = `<a href="tmp/${v.codigo}.csv">${v.observacion}</a>`
+        // }
         tblP.row.add([
           observacion,
           v.fechainicio,
@@ -361,7 +371,7 @@ function ExtraerColeccion(){
   });
 }
 
-function LimpiarBandejaCarnet(){    
+function LimpiarBandejaCarnet(){
     var sucursal = $("#cmbSucursalCarnet").val();
     var estatus = $("#cmbEstatusCarnet").val();
     var url = `${Conn.URL}carnet/limpiar/${estatus}/${sucursal}`;
@@ -413,7 +423,7 @@ function MensajeExtraerDatos(){
     $("#_botonesmsj").html(botones);
     $('#modMsj').modal('show');
   }
-  
+
 
 
 
@@ -438,4 +448,49 @@ function ExtraerDatos(){
       $.notify("proceso finalizado", "success");
     }
   });
+}
+
+
+
+/**
+ * Enviando Archivos
+ */
+function EnviarArchivos() {
+    if ($("#archivo").val() == "") {
+        //$.notify("Debe seleccionar un archivo", {position: "top"});
+        return false;
+    }
+
+    var formData = new FormData(document.forms.namedItem("forma"));
+
+    //$('#mdlCondicion').modal('show');
+    var strUrl = "https://" + Conn.IP + Conn.PuertoSSL +  "/ipsfa/api/militar/jwtsubirarchivos";
+    console.log(strUrl);
+    $.ajax({
+        url: strUrl,
+        type: "post",
+        dataType: "html",
+        data: formData,
+        timeout: 15000,
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader("Authorization", 'Bearer '+ sessionStorage.getItem('ipsfaToken'));
+        }
+    })
+    .done(function (res) {
+        $("#archivo").val("");
+        $.notify("Envio de archivos exitosos...", "success");
+        //$("#msjdesertores").html("Proceso finalizado...");
+
+    }).fail(function (jqXHR, textStatus) {
+        console.log(textStatus);
+        $("#archivo").val("");
+        if (textStatus === 'timeout') {
+            $.notify("Los archivos exceden el limite en tiempo de conexion intente con menos...", "error");
+        }
+
+    });
+
 }

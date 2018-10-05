@@ -4,7 +4,7 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form class="form-horizontal">
+  <div class="form-horizontal">
     <div class="box-body">
 
 
@@ -26,7 +26,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal">
+          <div class="form-horizontal">
             <div class="box-body">
               Extraer colección de reducción para el
               análisis y estadísticas de: titulares militares y familiares. Está opción permite
@@ -39,7 +39,7 @@
               <button type="button" class="btn btn-success pull-right" onclick="ValidarColeccion()">Extraer colección</button>
             </div>
             <!-- /.box-footer -->
-          </form>
+          </div>
         </div>
       </div>
 
@@ -51,7 +51,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal">
+          <div class="form-horizontal">
             <div class="box-body">
               Respaldar permite extraer de
               forma segura una copia fiel y exacta de la base datos de
@@ -65,7 +65,7 @@
               <button type="submit" class="btn btn-primary pull-right" >Extraer respaldo</button>
             </div>
             <!-- /.box-footer -->
-          </form>
+          </div>
         </div>
       </div>
 
@@ -77,7 +77,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal">
+          <div class="form-horizontal">
             <div class="box-body">
               Extraer colección de MongoDB para el
               análisis y de datos y busquedas por: titulares militares y familiares. Está opción permite
@@ -89,7 +89,7 @@
               <button type="submit" class="btn btn-warning pull-right" onclick="MensajeExtraerDatos()">Extraer datos</button>
             </div>
             <!-- /.box-footer -->
-          </form>
+          </div>
         </div>
       </div>
 
@@ -105,7 +105,7 @@
 
     </div>
     <!-- /.box-footer -->
-  </form>
+  </div>
 </div>
 
 
@@ -116,7 +116,7 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form class="form-horizontal">
+  <div class="form-horizontal">
     <div class="box-body" id="_frmCarne">
       <div class="col-md-6">
         <div class="box box-info box-solid">
@@ -125,7 +125,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal">
+          <div class="form-horizontal">
             <div class="box-body">
               <div class="col-md-12">
                 Al cambiar estatus de un carné automaticamente lo moverá de las bandejas.
@@ -153,7 +153,7 @@
               <button type="submit" class="btn btn-info pull-right" >Cambiar estatus</button>
             </div>
             <!-- /.box-footer -->
-          </form>
+          </div>
         </div>
       </div>
 
@@ -165,7 +165,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal">
+          <div class="form-horizontal">
             <div class="box-body">
               <div class="col-md-12">
                 Al limpiar la bandeja de los carnés los moverá a estatus de rechazados.
@@ -197,7 +197,7 @@
               <div class="col-md-6 col-sm-12">
 
                 <label>Estatus:</label>
-                <select class="js-states form-control" 
+                <select class="js-states form-control"
                 style="width: 100%"  aria-hidden="true" id="cmbEstatusCarnet" required >
                   <option value=0>APROBACION</option>
                   <option value=1>IMPRESION</option>
@@ -214,7 +214,7 @@
               <button onclick="LimpiarBandejaCarnet();" class="btn btn-danger pull-right" >Limpiar bandeja</button>
             </div>
             <!-- /.box-footer -->
-          </form>
+          </div>
         </div>
       </div>
 
@@ -229,8 +229,89 @@
 
     </div>
     <!-- /.box-footer -->
-  </form>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">Operaciones masivas para desertores</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <div class="form-horizontal">
+    <div class="box-body" id="_frmCondicion">
+      <div class="col-md-6">
+        <div class="box box-success box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Condiciones</h3>
+          </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <div class="form-horizontal">
+            <div class="box-body">
+              <div class="col-md-12">
+                El documento para el proceso de desertores en caso masivo debe ser en formato *.csv separado por punto y coma (;). Debe contener almenos dos
+                columnas empezando por cédula y luego cualquier otro atributo sea un numero u otro. <br><br>
+              </div>
+              <div class="col-md-12 col-sm-12">
+                <form method="post" enctype="multipart/form-data" id="forma" name="forma" action="subirl">
+                    <label>Cargar Archivos:</label>
+                     <input type="file" accept=".csv"
+                     name="archivo" id="archivo">
+                  <input type="hidden" name="txtFileID" id="txtFileID" value="DESERTOR" readonly="readonly">
+                </form>
+              </div>
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+
+
+              <button onclick="EnviarArchivos();" class="btn btn-info pull-right" ><i class="fa fa-download"></i> Procesar Archivos</button>
+            </div>
+            <!-- /.box-footer -->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <div class="overlay" id="_cargandocondicion" style="display:none">
+        <i class="fa fa-refresh fa-spin"></i>
+      </div>
+
+    </div>
+    <!-- /.box-footer -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -240,3 +321,22 @@
 <div class="col-md-12">
   <center>Fuerza Armada Nacional Bolivariana</center>
 </div>
+
+
+<!-- !-->
+  <div class="modal fade" tabindex="-1" role="dialog" id="mdlCondicion">
+    <div class="modal-dialog modal-warning" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Mensaje</h4>
+        </div>
+        <div class="modal-body">
+          <h1 id="msjdesertores">Cargando lista de desertores por favor espere</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
