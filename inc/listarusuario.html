@@ -39,7 +39,6 @@
     <table id="tblUsuario" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
             <thead>
                 <tr role="row">
-                    <th>#</th>
                     <th>ID</th>
                     <th>USUARIO</th>
                     <th>SUCURSAL </th>
@@ -60,17 +59,23 @@
     });
     promesa.then(function(xhRequest) {
         var datos = JSON.parse(xhRequest.responseText);
-        var i = 1;
+        var i = 0;
         datos.forEach( v => {
+          i++;
+          var id = v.id==undefined?"":v.id;
+          var usuario = v.usuario==undefined?"":v.usuario;
+          var sucursal = v.sucursal==undefined?"":v.sucursal;
+          var perfil = v.Perfil.descripcion==undefined?"":v.Perfil.descripcion;
+          var nombre = v.nombre==undefined?"":v.nombre;
+          var cedula = v.cedula==undefined?"":v.cedula;
 
           tblP.row.add([
-            i++,
-            v.id,
-            v.usuario,
-            v.sucursal,
-            v.Perfil.descripcion,
-            v.nombre,
-            v.cedula,
+            id,
+            usuario,
+            sucursal,
+            perfil,
+            nombre,
+            cedula,
             ""
           ]).draw(false);
         });
