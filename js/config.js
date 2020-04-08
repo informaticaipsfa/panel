@@ -1,16 +1,20 @@
+let _url = new URL(document.URL);
+
 class Conexion{
-    constructor(){
-        this.IP = "192.168.12.244";
-        this.Puerto = ":8080";
-        this.PuertoSSL = ":2608";
-        this.API = "/ipsfa/api/";
-        this.URL = "https://" + this.IP + this.PuertoSSL + this.API;
-        this.URLIMG = "http://192.168.12.244/imagenes/";
-        this.URLTEMP = "http://192.168.12.244/SSSIFANB/temp/";
-        //this.URLSEC = "http://"+this.IP + this.PuertoSSL;
-        this.URLSEC = "http://" + this.IP + this.Puerto;
-    }
+  constructor(){
+      this.IP = _url.hostname;
+      this.Puerto = ":8080";
+      this.PuertoSSL = ":2608";
+      this.API = "/ipsfa/api/";
+      this.URL = this.API;
+      this.URLS = "https://" + this.IP + this.PuertoSSL + this.API;
+      this.URLSEC = "https://" + this.IP + this.PuertoSSL;
+      this.URLIMG = "http://192.168.6.45/imagenes/";
+      this.URLTEMP = "temp/";
+
+  }
 }
+
 
 function CargarAPI(options){
     var xhttp = new XMLHttpRequest();
