@@ -9,7 +9,7 @@ class WGit {
         this.data = '';
     }
     Crear(req) {
-
+        console.log(req);
     }
 
     Salvar(){
