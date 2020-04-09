@@ -31,9 +31,26 @@ class WGit {
             valores: this.Obtener(data),
         });
         promesa.then(function(xhRequest) {
+  
             $("#txtConsola").val(xhRequest.responseText);
             $("#_cargando").hide();
             if ($("#cmbPaquete").val() == "bus") $("#btnCompilar").show();
+            
+            // ********************************************
+            if ( $("#cmbPaquete").val() == "pension" && data != "log" ){
+                $("#_cargando").show();
+                var promesa = CargarAPI({
+                    sURL: Conn.URL + "pensionado/gitall",
+                    metodo: 'POST',
+                    valores: '',
+                });    
+                promesa.then(function(xhRequest) {
+                    var json = JSON.parse(xhRequest.responseText)
+                    $("#txtConsola").val(json.rs);
+                    $("#_cargando").hide();
+                });
+            }
+            // *********************************************
         });
     }
     Compilar(data){
@@ -47,8 +64,16 @@ class WGit {
         promesa.then(function(xhRequest) {
             $("#txtConsola").val(xhRequest.responseText);
             $("#_cargando").hide();
+            
+            
+           
+
         }); 
+
+
     }
+
+
 }
 
 //Actualizar los diferente paquetes de SSSIFANB
