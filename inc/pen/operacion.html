@@ -1,0 +1,53 @@
+
+    <div class="col-md-12 col-lg-12" id="_consultarbox">
+            <div class="box box-primary ">
+                <div class="box-header with-border">
+                    <i class="fa fa-bullhorn"></i>
+                    <h3 class="box-title">Nómina procesadas</h3>
+                </div>
+                <div class="box-body" >
+                    <div class="row" >
+                        <!-- Directivas -->
+                        <div class="col-md-8 col-sm-12">
+                            <label>&nbsp;&nbsp;&nbsp;&nbsp;Listado de nómina generadas:</label>
+                            <div class="input-group margin">
+                                <select class="js-states form-control"                                 
+                                    style="width: 100%" required="" aria-hidden="true" id="cmbSolicitud">  
+                                    <option value="">CARGANDO NOMINAS ...</option>                                  
+                                </select>
+                                <span  id="btnCuadre" class="input-group-btn" style="display:none">
+                                    <!-- <button type="button" id="btnPreparar" 
+                                        class="btn btn-md btn-success"  onclick="GenerarTxt()">
+                                        <i class="fa fa-credit-card"></i>
+                                        &nbsp;&nbsp;Descargar </button>                                              -->
+                                    <button type="button" id="btnImprimir" 
+                                        class="btn btn-md btn-primary" onclick="publicarNomina()">
+                                        <i class="fa fa-print"></i>
+                                        &nbsp;&nbsp;Públicar </button>
+                                    <button type="button" id="btnBaja" 
+                                        class="btn btn-md btn-warning" onclick="deBajaNomina()">
+                                        <i class="fa fa-eraser"></i>
+                                        &nbsp;&nbsp;Dar de Baja </button>
+                                    <button type="button" id="btnRechazar" 
+                                        class="btn btn-md btn-danger"  onclick="eliminarNomina()">
+                                       <i class="fa  fa-trash"></i>
+                                       &nbsp;&nbsp;Eliminar </button>   
+                                   
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                  
+        
+                </div><!-- /.box-body -->
+        
+                <!-- Loading (remove the following to stop the loading)-->
+                <div class="overlay" id="_cargandop" style="display:none">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+               
+            </div><!-- /.box -->
+        </div>
+        
+      

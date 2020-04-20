@@ -39,22 +39,10 @@
         <script src="js/controlador.js"></script>
         <script src="js/usuario.js"></script>
         <script src="js/panel.js"></script>
+        <script src="js/pen/operaciones.js"></script>
     </head>
 
-    <body class="hold-transition skin-yellow">
-        <header class="header" style="background-color:#3c8dbc">
-            <div class="row">
-                <div class="col-md-3 hidden-xs"><img src='images/ng.png' class="img-responsive" alt="Responsive image"
-                                                     style='float: left;'></div>
-                <div class="col-md-6 hidden-xs">
-                    <center><img src='images/rv.png' class="img-responsive" alt="Responsive image" style="margin-top:6px">
-                    </center>
-                </div>
-                <div class="col-md-3 hidden-xs"><img src='images/lg.png' class="img-responsive" alt="Responsive image"
-                                                     style="float:right;"></div>
-            </div>
-        </header>
-
+    <body class="hold-transition skin-purple">
         <div class="wrapper">
             <header class="main-header">
                 <a href="starter.html" class="logo">
@@ -69,12 +57,18 @@
                     <div class="navbar-custom-menu">
 
                         <ul class="nav navbar-nav">
-                            <li class="dropdown messages-menu" style="" id="_search" onclick="ActivarBuscar()">
+                          
+                          <li class="dropdown messages-menu"  id="_search" onclick="Pagina('listarusuario')">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-users"></i>&nbsp;&nbsp;Usuarios
+                              </a>
+                            </li>
+                            <li class="dropdown messages-menu"  id="_search" onclick="Pagina('actualizar')">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-search"></i>
+                                    <i class="fa fa-refresh"></i>&nbsp;&nbsp;Versiones
                                 </a>
                             </li>
-
+                            
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="images/ndisponible.jpg" onerror="this.src='images/ndisponible.jpg'"
@@ -115,13 +109,60 @@
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu" data-widget="tree" id='_menu'>
                         <li class='header'>MENU </li>
+
                         <li><a href="starter.html"><i class="fa fa-home"></i><span>Principal</span></a></li>
-                        <li><a href="#" onclick="Pagina('panel')"><i class="fa fa-gears"></i><span>Panel de Control</span></a></li>
-                        <li><a href="#" onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
-                        <li><a href="#" onclick="Pagina('crearusuario')"><i class="fa fa-pencil"></i><span>Crear Usuarios</span></a></li>
-                        <li><a href="#" onclick="Pagina('configurar')"><i class="fa fa-edit"></i><span>Configurar Usuarios</span></a></li>
-                        <li><a href="#" onclick="Pagina('auditoria')"><i class="fa fa-folder-open"></i><span>Auditoria</span></a></li>
-                        <li><a href="#" onclick="Pagina('actualizar')"><i class="fa fa-refresh"></i><span>Actualizar</span></a></li>
+                      
+                        <!-- Panel de Control -->
+                        <li class="active treeview menu-open">
+                            <a href="#">
+                              <i class="fa fa-dashboard"></i> <span>Panel de Control</span>
+                              <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                              </span>
+                            </a>
+                            <ul class="treeview-menu">
+                              <li><a href="#" onclick="Pagina('panel')"><i class="fa fa-gears"></i><span>Operaciones</span></a></li>
+                              <li><a href="#" onclick="Pagina('actualizar')"><i class="fa fa-refresh"></i><span>Actualizar Versión</span></a></li>
+                            </ul>
+                        </li>
+
+
+                        <!-- Pensiones -->
+                        <li class="treeview menu-close">
+                            <a href="#">
+                              <i class="fa fa-balance-scale"></i> <span>Pensiones</span>
+                              <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                              </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#" onclick="Pagina('pen/operacion');ListarMetodoBanco();"><i class="fa fa-gears"></i> <span>Operaciones</span></a></li>
+                                <li><a href="#" onclick="Pagina('pen/auditoria')"><i class="fa fa-folder-open"></i><span>Auditoria</span></a></li>
+                                <li><a href="#" onclick="Pagina('pen/configurar')"><i class="fa fa-edit"></i><span>Configurar</span></a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Seguridad -->
+                        <li class="treeview menu-close">
+                            <a href="#">
+                              <i class="fa fa-user-secret"></i> <span>Seguridad</span>
+                              <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                              </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#" onclick="Pagina('listarusuario')"><i class="fa fa-users"></i> <span>Lista De Usuarios</span></a></li>
+                                <li><a href="#" onclick="Pagina('crearusuario')"><i class="fa fa-pencil"></i><span>Crear Usuarios</span></a></li>
+                                <li><a href="#" onclick="Pagina('configurar')"><i class="fa fa-edit"></i><span>Configurar Usuarios</span></a></li>
+                                <li><a href="#" onclick="Pagina('auditoria')"><i class="fa fa-folder-open"></i><span>Auditoria</span></a></li>
+                            </ul>
+                        </li>
+
+                        
+
+
+                        
+                        
                         <li><a href="#" onclick="CerrarSession()"><i class="fa fa-close"></i><span>Cerrar Sesión</span></a></li>
                     </ul>
                     <!-- /.sidebar-menu -->
