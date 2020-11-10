@@ -37,6 +37,7 @@ function ListarMetodoBanco(ano){
 
 function eliminarNomina(){
     var solicitud = $("#cmbSolicitud").val();
+
     var promesa = CargarAPI({
         sURL: Conn.URL + "nomina/eliminar/" + solicitud,
         metodo: 'GET',
@@ -47,6 +48,7 @@ function eliminarNomina(){
         $.notify(req.msj, "success");
         
     });
+
 }
 
 function publicarNomina(){
@@ -78,3 +80,13 @@ function deBajaNomina(){
     });
 
 }
+
+
+function MensajeEliminarNomina(){
+    $("#_contenidoAlert").html("¿Está seguro que desea eliminar la nómina? luego no podrá recuperar está información.");
+    var botones = `<button type="button" class="btn btn-success" data-dismiss="modal" id="_aceptar"
+                      onClick="eliminarNomina()">Si</button>
+                   <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>`;
+    $("#_botonesmsjAlert").html(botones);
+    $('#modMsjAlert').modal('show');
+  }
