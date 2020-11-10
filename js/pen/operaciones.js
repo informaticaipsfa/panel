@@ -12,7 +12,7 @@ function ListarMetodoBanco(ano){
     });
     promesa.then(function(xhRequest) {
         var req = JSON.parse(xhRequest.responseText);
-       
+        console.log(req);
         $("#btnCuadre").hide();
         $("#cmbSolicitud").html(`<option value="0">NO HAY NOMINAS PENDIENTES POR PROCESAR</option>`);
         var i = 0;
@@ -22,7 +22,7 @@ function ListarMetodoBanco(ano){
             var lectivo = e.desd.split("-");
             console.log(lectivo[0], ano);
             if(lectivo[0] == ano){
-                combo += `<option value="${e.firma}">( ${ e.cantidad } ) ${e.obse} - ${e.mes} </option>`;            
+                combo += `<option value="${e.firma}">( ${ e.cantidad } ) ${e.obse} - ${e.mes} | ${e.firma} </option>`;            
                 i++;
             }
 
