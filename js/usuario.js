@@ -55,7 +55,7 @@ function listarPendientes(){
   var tblP = $('#tblPendientes').DataTable(opcionesf);
   tblP.clear().draw();
   var promesa = CargarAPI({
-      sURL: Conn.URL + "wpanel/data/listarpendientes",
+      sURL: Conn.URLSEC + "/wpanel/data/listarpendientes",
       metodo: 'POST',
       valores: '',
   });
@@ -108,7 +108,7 @@ function ListarColecciones(){
   var tblC = $('#tblColeccion').DataTable(opcionesf);
   tblC.clear().draw();
   var promesa = CargarAPI({
-      sURL: Conn.URL + "wpanel/data/listarcolecciones",
+      sURL: Conn.URLSEC + "/wpanel/data/listarcolecciones",
       metodo: 'POST',
       valores: '',
   });
@@ -207,7 +207,7 @@ class Usuario{
     Salvar(){
 
       var requestE = CargarAPI({
-          sURL: Conn.URL + "wusuario/crud",
+          sURL: Conn.URLSEC + "/wusuario/crud",
           metodo: 'POST',
           valores: this.Obtener(),
       });
@@ -251,7 +251,7 @@ function llenarUsuarios(){
 function cargarUsuario(){
     var usuario = $("#cmbListadoUsuario option:selected").val();
     var promesa = CargarAPI({
-        sURL: Conn.URL + "wusuario/crud/"+usuario,
+        sURL: Conn.URLSEC + "/wusuario/crud/"+usuario,
         metodo: 'GET',
         valores: '',
     });
@@ -291,7 +291,7 @@ function llenarUsuario(datos){
 function cargarMenu(){
     var usuario = $("#cmbUsuario option:selected").val();
     var promesa = CargarAPI({
-        sURL: Conn.URL + "wusuario/crud/"+usuario,
+        sURL: Conn.URLSEC + "/wusuario/crud/"+usuario,
         metodo: 'GET',
         valores: '',
     });
@@ -311,7 +311,7 @@ function llenarMenu(){
 
 function ValidarColeccion(){
   var promesa = CargarAPI({
-      sURL: Conn.URL + "wpanel/data/vreduccion",
+      sURL: Conn.URLSEC + "/wpanel/data/vreduccion",
       metodo: 'POST',
       valores: '',
   });
@@ -331,7 +331,7 @@ function CrearColeccion(){
   $("#alertcoleccion").hide();
   $("#_cargando").show();
   var promesa = CargarAPI({
-      sURL: Conn.URL + "wpanel/data/crearreduccion",
+      sURL: Conn.URLSEC + "/wpanel/data/crearreduccion",
       metodo: 'POST',
       valores: '',
   });
@@ -356,7 +356,7 @@ function CrearColeccion(){
 
 function ExtraerColeccion(){
   var promesa = CargarAPI({
-      sURL: Conn.URL + "wpanel/data/exreduccion",
+      sURL: Conn.URLSEC + "/wpanel/data/exreduccion",
       metodo: 'POST',
       valores: '',
   });
@@ -374,7 +374,7 @@ function ExtraerColeccion(){
 function LimpiarBandejaCarnet(){
     var sucursal = $("#cmbSucursalCarnet").val();
     var estatus = $("#cmbEstatusCarnet").val();
-    var url = `${Conn.URL}carnet/limpiar/${estatus}/${sucursal}`;
+    var url = `${Conn.URLSEC}/carnet/limpiar/${estatus}/${sucursal}`;
     var promesa = CargarAPI({
         sURL: url,
         metodo: 'GET',
@@ -430,7 +430,7 @@ function MensajeExtraerDatos(){
 
 function ExtraerDatos(){
   var promesa = CargarAPI({
-      sURL: Conn.URL + "wpanel/data/extraerdatosmysql",
+      sURL: Conn.URLSEC + "/wpanel/data/extraerdatosmysql",
       metodo: 'POST',
       valores: '',
   });
@@ -464,7 +464,7 @@ function EnviarArchivos() {
     var formData = new FormData(document.forms.namedItem("forma"));
 
     //$('#mdlCondicion').modal('show');
-    var strUrl = "https://" + Conn.IP + Conn.PuertoSSL +  "/ipsfa/api/militar/jwtsubirarchivos";
+    var strUrl = Conn.URLSEC +  "/ipsfa/api/militar/jwtsubirarchivos";
     console.log(strUrl);
     $.ajax({
         url: strUrl,
