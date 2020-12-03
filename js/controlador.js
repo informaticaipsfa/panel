@@ -85,7 +85,7 @@ var Conn = new Conexion();
 var Estados = new Estado();
 $(function () {
   var promesa = CargarAPI({
-      sURL: Conn.URLSEC + "/estado",
+      sURL: Conn.URL + "estado",
       metodo: 'GET',
       valores: '',
   });

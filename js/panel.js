@@ -26,7 +26,7 @@ class WGit {
         $("#_cargando").show();
         $("#btnCompilar").hide();
         var promesa = CargarAPI({
-            sURL: Conn.URLSEC + "/wpanel/data/gitall",
+            sURL: Conn.URL + "wpanel/data/gitall",
             metodo: 'POST',
             valores: this.Obtener(data),
         });
@@ -40,7 +40,7 @@ class WGit {
             if ( $("#cmbPaquete").val() == "pension" && data != "log" ){
                 $("#_cargando").show();
                 var promesa = CargarAPI({
-                    sURL: Conn.URLSEC + "/pensionado/gitall",
+                    sURL: Conn.URL + "pensionado/gitall",
                     metodo: 'POST',
                     valores: '',
                 });    
@@ -57,7 +57,7 @@ class WGit {
         $("#_cargando").show();
         $("#btnCompilar").hide();
         var promesa = CargarAPI({
-            sURL: Conn.URLSEC + "/wpanel/data/compilar",
+            sURL: Conn.URL + "wpanel/data/compilar",
             metodo: 'POST',
             valores: this.Obtener(data),
         });

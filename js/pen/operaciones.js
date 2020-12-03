@@ -6,7 +6,7 @@ function ListarMetodoBanco(ano){
     }
     
     var promesa = CargarAPI({
-        sURL: Conn.URLSEC + "/nomina/listarpagos",
+        sURL: Conn.URL + "nomina/listarpagos",
         metodo: 'GET',
         valores: '',
     });
@@ -39,7 +39,7 @@ function eliminarNomina(){
     var solicitud = $("#cmbSolicitud").val();
 
     var promesa = CargarAPI({
-        sURL: Conn.URLSEC + "/nomina/eliminar/" + solicitud,
+        sURL: Conn.URL + "nomina/eliminar/" + solicitud,
         metodo: 'GET',
         valores: '',
     });
@@ -55,7 +55,7 @@ function publicarNomina(){
     var solicitud = $("#cmbSolicitud").val();
 
     var promesa = CargarAPI({
-        sURL: Conn.URLSEC + "/nomina/publicar/" + solicitud,
+        sURL: Conn.URL + "nomina/publicar/" + solicitud,
         metodo: 'GET',
         valores: '',
     });
@@ -70,7 +70,7 @@ function deBajaNomina(){
     var solicitud = $("#cmbSolicitud").val();
 
     var promesa = CargarAPI({
-        sURL: Conn.URLSEC + "/nomina/debaja/" + solicitud,
+        sURL: Conn.URL + "nomina/debaja/" + solicitud,
         metodo: 'GET',
         valores: '',
     });
