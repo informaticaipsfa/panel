@@ -2,15 +2,15 @@ let _url = new URL(document.URL);
 
 class Conexion{
   constructor(){
-      this.IP = _url.hostname;
-      this.Puerto = ":8080";
-      this.PuertoSSL = ":2608";
-      this.API = "/ipsfa/api/";
-      this.URL = this.API;
-      this.URLS = "https://" + this.IP + this.PuertoSSL + this.API;
-      this.URLSEC = "https://" + this.IP + this.PuertoSSL;
-      this.URLIMG = "http://192.168.6.45/imagenes/";
-      this.URLTEMP = "temp/";
+    this.IP = _url.hostname;
+    this.Puerto = ":8080";
+    this.PuertoSSL = _url.port;
+    this.API = "/ipsfa/api/";
+    this.URL = this.API;
+    this.URLS = "https://" + this.IP + this.PuertoSSL + this.API;
+    this.URLSEC = this.PuertoSSL!=""?"https://" + this.IP + ":"+ this.PuertoSSL: "https://" + this.IP;
+    this.URLIMG = "http://192.168.12.244/imagenes/";
+    this.URLTEMP = "temp/";
 
   }
 }
@@ -18,8 +18,10 @@ class Conexion{
 
 function CargarAPI(options){
     var xhttp = new XMLHttpRequest();
+    xhttp.withCredentials = true;
     xhttp.open(options.metodo, options.sURL);
     xhttp.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem('ipsfaToken'));
+    
     var promise = new Promise(function(resolve, reject) {
         xhttp.addEventListener('readystatechange', function() {
 

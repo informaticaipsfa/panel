@@ -464,7 +464,7 @@ function EnviarArchivos() {
     var formData = new FormData(document.forms.namedItem("forma"));
 
     //$('#mdlCondicion').modal('show');
-    var strUrl = "https://" + Conn.IP + Conn.PuertoSSL +  "/ipsfa/api/militar/jwtsubirarchivos";
+    var strUrl = Conn.URLSEC +  "/ipsfa/api/militar/jwtsubirarchivos";
     console.log(strUrl);
     $.ajax({
         url: strUrl,
