@@ -1,0 +1,76 @@
+
+<div class="nav-tabs-custom">
+    <div class="tab-content">
+        <h4 class="box-title">Restablecer Claves</h4> 
+        <div class="tab-pane active" id="tab_1">
+        <div class="nav-tabs-custom box box-primary"></div>
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <div class="form-group">
+                        <label>Aplicación</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="ion-ios-paper-outline"></span></span>
+                        <select class="form-control" id="cmbSistema">
+                            <option value="0">Seleccionar...</option>
+                            <option value="usuario">INTERNO</option>
+                            <option value="wusuario">WEB</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-md-4">
+                    <div class="form-group">
+                        <label>Login / Cédula</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="ion-person"></span></span>
+                                <input type="text" class="form-control" id="txtCedula" 
+                                placeholder="Cédula del Usuario" maxlength="40"/>
+                                <input type="text" hidden=true id="txtID"/>
+                                <span  id="" class="input-group-btn" >
+                                    <button type="button" class="btn btn-success"
+                                        onclick="BCedClave()"><i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-5">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span
+                                    class="fa fa-user"></span></span>
+                                    <input type="text" disabled=true class="form-control" id="txtNombre" 
+                                    placeholder="Nombre Completo" maxlength="20"
+                                     
+                                    onkeypress="return Util.SoloNumero(event)"/>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        <div class="nav-tabs-custom box box-primary"> </div>
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <div class="form-group">
+                        <label>Nueva Clave</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span
+                                    class="fa fa-bars"></span></span>
+                                    <input type="text" class="form-control" id="txtClave" 
+                                    placeholder="Nueva Clave" maxlength="20">
+                                    <span  id="" class="input-group-btn" >
+                                        <button type="button" class="btn btn-success"
+                                            onclick="actualizarClaves()"><i
+                                            class="fa fa-refresh"></i>
+                                        </button>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

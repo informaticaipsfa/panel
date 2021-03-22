@@ -262,6 +262,44 @@ function cargarUsuario(){
 
 }
 
+
+function BCedClave(id){
+  var aplicacion = $("#cmbSistema option:selected").val();
+  var cedula = $("#txtCedula").val();
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wusuario/consultar/"+ cedula + "/" + aplicacion,
+      metodo: 'GET',
+      valores: '',
+  });
+  promesa.then(function(xhRequest) {
+      var datos = JSON.parse(xhRequest.responseText);
+      $("#txtNombre").val(datos.nombre);
+      $("#txtID").val(datos._id);
+  });
+}
+
+function actualizarClaves(){
+  var actualizar = {
+    id : $("#txtID").val(),
+    clave: $("#txtClave").val(),
+    coleccion: $("#cmbSistema option:selected").val()
+  }
+  var promesa = CargarAPI({
+      sURL: Conn.URL + "wusuario/restablecer",
+      metodo: 'PUT',
+      valores: actualizar,
+  });
+  promesa.then(function(xhRequest) {
+      var req = JSON.parse(xhRequest.responseText);
+      $("#txtCedula").val('');
+      $("#txtID").val('');
+      $("#txtClave").val('');
+      $("#txtNombre").val('');
+      $.notify(req.msj, "success");
+      
+  });
+}
+
 function llenarUsuario(datos){
 
     $("#fechaCreacion").val(datos.fechacreacion);
@@ -288,6 +326,8 @@ function llenarUsuario(datos){
     $("#Clave").val(datos.Clave);
     $("#rclave").val(datos.rclave);
 }
+
+
 function cargarMenu(){
     var usuario = $("#cmbUsuario option:selected").val();
     var promesa = CargarAPI({
