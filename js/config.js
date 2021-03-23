@@ -20,8 +20,8 @@ function CargarAPI(options){
     var xhttp = new XMLHttpRequest();
     xhttp.withCredentials = true;
     xhttp.open(options.metodo, options.sURL);
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem('ipsfaToken'));
-    
     var promise = new Promise(function(resolve, reject) {
         xhttp.addEventListener('readystatechange', function() {
 
@@ -34,7 +34,7 @@ function CargarAPI(options){
             if( xhttp.status === 401){
               if ( xhttp.responseText != "" ) {
                 respuesta = JSON.parse(xhttp.responseText);
-                $.notify(respuesta.msj);
+                //$.notify(respuesta.msj);
               }
             }
         });

@@ -38,7 +38,6 @@ $(function () {
     ListarColecciones();
 });
 
-
 function listarPendientes(){
   var tabla = `
   <table id="tblPendientes" class="table table-hover table-striped">
@@ -56,7 +55,7 @@ function listarPendientes(){
   tblP.clear().draw();
   var promesa = CargarAPI({
       sURL: Conn.URL + "wpanel/data/listarpendientes",
-      metodo: 'POST',
+      metodo: 'GET',
       valores: '',
   });
   promesa.then(function(xhRequest) {
@@ -80,9 +79,6 @@ function listarPendientes(){
           default:
 
         }
-        // if (v.tipo == "CSV"){
-        //   observacion = `<a href="tmp/${v.codigo}.csv">${v.observacion}</a>`
-        // }
         tblP.row.add([
           observacion,
           v.fechainicio,
@@ -93,7 +89,6 @@ function listarPendientes(){
   });
   return true;
 }
-
 
 function ListarColecciones(){
   var tabla = `
@@ -109,7 +104,7 @@ function ListarColecciones(){
   tblC.clear().draw();
   var promesa = CargarAPI({
       sURL: Conn.URL + "wpanel/data/listarcolecciones",
-      metodo: 'POST',
+      metodo: 'GET',
       valores: '',
   });
   promesa.then(function(xhRequest) {
@@ -121,7 +116,6 @@ function ListarColecciones(){
   });
   return true;
 }
-
 
 class Roles{
     constructor(){
@@ -222,24 +216,22 @@ function Salvar(){
   var usuario = new Usuario();
   usuario.Salvar();
   console.log("Usuario Salvado!!!");
-
 }
 
 function llenarLista(){
-
-    $("#cmbListadoUsuario").html("");
-
-        listaUsuario.forEach(v => {
-            $("#tblUsuarioCuerpo").append(`
-            <tr><td>${v.sucursal}</td>
-            <td></td>
-            <td></td>
-            <td>${v.nombre}</td>
-            <td>${v.cedula}</td>
-            <td>${v.usuario}</td>
-            <td>${v.estatus}</td></tr>`) });
-    };
-
+  $("#cmbListadoUsuario").html("");
+  listaUsuario.forEach(v => {
+    $("#tblUsuarioCuerpo").append(`
+        <tr><td>${v.sucursal}</td>
+        <td></td>
+        <td></td>
+        <td>${v.nombre}</td>
+        <td>${v.cedula}</td>
+        <td>${v.usuario}</td>
+        <td>${v.estatus}</td></tr>`
+      ) 
+    });
+}
 
 function llenarUsuarios(){
     $("#cmbUsuario").html("");
@@ -259,9 +251,7 @@ function cargarUsuario(){
         var datos = JSON.parse(xhRequest.responseText);
         llenarUsuario(datos);
     });
-
 }
-
 
 function BCedClave(id){
   var aplicacion = $("#cmbSistema option:selected").val();
@@ -327,7 +317,6 @@ function llenarUsuario(datos){
     $("#rclave").val(datos.rclave);
 }
 
-
 function cargarMenu(){
     var usuario = $("#cmbUsuario option:selected").val();
     var promesa = CargarAPI({
@@ -348,7 +337,6 @@ function llenarMenu(){
     });
 }
 
-
 function ValidarColeccion(){
   var promesa = CargarAPI({
       sURL: Conn.URL + "wpanel/data/vreduccion",
@@ -365,7 +353,6 @@ function ValidarColeccion(){
       }
   });
 }
-
 
 function CrearColeccion(){
   $("#alertcoleccion").hide();
@@ -392,7 +379,6 @@ function CrearColeccion(){
       }
   });
 }
-
 
 function ExtraerColeccion(){
   var promesa = CargarAPI({
@@ -456,17 +442,13 @@ function MensajeExtraerColeccion(){
 }
 
 function MensajeExtraerDatos(){
-    $("#_contenido").html("¿Está seguro que desea extraer datos para Mysql esto puede tardar varios minutos?");
-    var botones = `<button type="button" class="btn btn-success" data-dismiss="modal" id="_aceptar"
-                      onClick="ExtraerDatos()">Si</button>
-                   <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>`;
-    $("#_botonesmsj").html(botones);
-    $('#modMsj').modal('show');
-  }
-
-
-
-
+  $("#_contenido").html("¿Está seguro que desea extraer datos para Mysql esto puede tardar varios minutos?");
+  var botones = `<button type="button" class="btn btn-success" data-dismiss="modal" id="_aceptar"
+                    onClick="ExtraerDatos()">Si</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>`;
+  $("#_botonesmsj").html(botones);
+  $('#modMsj').modal('show');
+}
 
 function ExtraerDatos(){
   var promesa = CargarAPI({
@@ -489,8 +471,6 @@ function ExtraerDatos(){
     }
   });
 }
-
-
 
 /**
  * Enviando Archivos
