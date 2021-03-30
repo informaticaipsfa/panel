@@ -276,7 +276,7 @@ function actualizarClaves(){
   }
   var promesa = CargarAPI({
       sURL: Conn.URL + "wusuario/restablecer",
-      metodo: 'PUT',
+      metodo: 'POST',
       valores: actualizar,
   });
   promesa.then(function(xhRequest) {
