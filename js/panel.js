@@ -32,12 +32,13 @@ class WGit {
         });
         promesa.then(function(xhRequest) {
   
+
             $("#txtConsola").val(xhRequest.responseText);
             $("#_cargando").hide();
             if ($("#cmbPaquete").val() == "bus") $("#btnCompilar").show();
             
             // ********************************************
-            if ( $("#cmbPaquete").val() == "pension" && data != "log" ){
+            if ( $("#cmbPaquete").val() == "pensiones" && data != "log" ){
                 $("#_cargando").show();
                 var promesa = CargarAPI({
                     sURL: Conn.URL + "pensionado/gitall",
