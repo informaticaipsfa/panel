@@ -265,7 +265,9 @@ function BCedClave(id){
       var datos = JSON.parse(xhRequest.responseText);
       $("#txtNombre").val(datos.nombre);
       $("#txtID").val(datos._id);
-  });
+      $("#txtCorreo").val(datos.correo);
+
+    });
 }
 
 function actualizarClaves(){
@@ -285,6 +287,7 @@ function actualizarClaves(){
       $("#txtID").val('');
       $("#txtClave").val('');
       $("#txtNombre").val('');
+      $("#txtCorreo").val('');
       $.notify(req.msj, "success");
       
   });
