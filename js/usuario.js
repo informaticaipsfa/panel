@@ -272,9 +272,9 @@ function BCedClave(id){
 
 function actualizarClaves(){
   var actualizar = {
-    id : $("#txtID").val(),
     clave: $("#txtClave").val(),
-    coleccion: $("#cmbSistema option:selected").val()
+    cedula : $("#txtCedula").val(),
+    correo : $("#txtCorreo").val(),
   }
   var promesa = CargarAPI({
       sURL: Conn.URL + "wusuario/restablecer",
